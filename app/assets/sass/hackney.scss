@@ -1,0 +1,47 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/templates/blank-unbranded
+
+// Import settings first so we can override them before importing all of GOV.UK Frontend
+// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
+@import "node_modules/govuk-frontend/govuk/settings/all";
+
+// Override the default GOV.UK Frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+
+@import url("https://unpkg.com/lbh-frontend@3.2.0/dist/lbh-frontend-3.2.0.min.css");
+
+@import "application";
+
+
+.govuk-phase-banner {
+  margin-top: 0;
+}
+
+.lbh-header {
+  padding-bottom: 16px;
+}
+
+.lbh-header__content {
+  margin-top: 0.1em;
+}
+
+.lbh-tag--prototype {
+  background: rebeccapurple;
+}
+
+.lbh {
+
+  p, h1, h2, h3, h4, h5, h6, a,
+  .govuk-body,
+  .govuk-body-m,
+  .lbh-header__content {
+    font-family: "Open Sans";
+  }
+
+}
