@@ -16,6 +16,14 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import url("https://unpkg.com/lbh-frontend@3.2.0/dist/lbh-frontend-3.2.0.min.css");
 
+
+@media (min-width: 40.0625em){
+  .govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 50px;
+  }
+}
+
+
 @import "application";
 
 
@@ -37,11 +45,95 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 .lbh {
 
-  p, h1, h2, h3, h4, h5, h6, a,
+  .govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+    padding-top: 0;
+  }
+
+  p, h1, h2, h3, h4, h5, h6, a, li, section,
   .govuk-body,
   .govuk-body-m,
   .lbh-header__content {
     font-family: "Open Sans";
+  }
+
+  ul {
+    padding-left: 1.25em;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 40.0625em){
+    .govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
+      padding-top: 1rem;
+    }
+    .govuk-heading-xl {
+        margin-bottom: 0.5em;
+    }
+  }
+
+  // Page announcement
+
+  .mmh-page-announcement {
+    //padding: 1.5625rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #025ea6;
+    border-left-width: 6px;
+    background: rgba(0,133,202,.1);
+
+    &--success {
+      border-color: #84bd00;
+      background: rgba(164,214,94,.3);
+    }
+
+    &--warning {
+      border-color: #be3a34;
+      background: rgba(224,60,49,.2);
+    }
+  }
+  .mmh-page-announcement__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .mmh-page-announcement__content {
+    margin-top: 0.75rem;
+    font-weight: 400;
+  }
+  @media (min-width: 40.0625em){
+    .lbh-page-announcement {
+      padding: 1.5625rem;
+    }
+  }
+
+  .mmh-sidenav {
+    position:relative;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding-left: 0;
+    }
+
+    li {
+      margin-top: 0.5em;
+    }
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .lbh .mmh-sidenav {
+    border: 1px solid #333333;
+    padding: 0.5em;
+
+    li {
+      display: none;
+      margin: 0;
+    }
+
+    li.mmh-sidenav-label {
+      display: block;
+    }
   }
 
 }

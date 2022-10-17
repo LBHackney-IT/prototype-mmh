@@ -1,0 +1,94 @@
+{% extends "layout/hackney.html" %}
+
+{% block pageTitle %}
+  Page Annoucnement - Components - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Page announcement
+      </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        Use a page annoucement to alert a user to important new information. Colour variations are possible for different kinds of content.
+      </p>
+
+      <section class="mmh-page-announcement">
+        <h3 class="mmh-page-announcement__title">Informational announcement</h3>
+        <div class="mmh-page-announcement__content">
+          More detail about the announcement.
+        </div>
+      </section>
+
+      <section class="mmh-page-announcement">
+        <h3 class="mmh-page-announcement__title">Informational announcement</h3>
+      </section>
+
+      <h2 class="govuk-heading-l">
+        When to use this component
+      </h2>
+      <p>
+        A page announcement lets you tell the user about something that may not be directly relevant to the thing they're trying to do on that page of the service, but is related to the information on the page, and is worth being highlighted to the user. For example:
+      </p>
+      <ul>
+        <li>Telling the user ...
+      </ul>
+
+      
+
+      <h2 class="govuk-heading-l">
+        Telling the user about a cautionary alert against a tenant
+      </h2>
+
+      <section class="mmh-page-announcement mmh-page-announcement--warning">
+        <h3 class="mmh-page-announcement__title">Cautionary alert</h3>
+        <div class="mmh-page-announcement__content">
+          More detail about the cautionary alert.
+        </div>
+      </section>
+
+      <h2 class="govuk-heading-l">
+        Reacting to something the user has done
+      </h2>
+
+      <p>You can also use a page announcement to tell the user about the outcome of something they've just done - seeing as these are internal systems, completing one task does not mean they are finished working in the system, so it does not make sense to use a confirmation page to completely end a journey.</p>
+
+      <section class="mmh-page-announcement mmh-page-announcement--success">
+        <h3 class="mmh-page-announcement__title">Change successful</h3>
+        <div class="mmh-page-announcement__content">
+          More detail about the what you just successfully did.
+        </div>
+      </section>
+
+      <!--p>
+        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+      </p>
+
+      <h2 class="govuk-heading-m">About this page</h2>
+
+      <p>We recommend you add links to your prototype to this page, rather than delete it.
+        You'll find this page in the kit at '/app/views/index.html'.</p>
+
+      <p>You can change the service name by editing the file '/app/config.js'.</p>
+
+      <h2 class="govuk-heading-m">Examples and documentation</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
+        </li>
+        <li>
+          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+        </li>
+      </ul-->
+    </div>
+  </div>
+
+{% endblock %}
