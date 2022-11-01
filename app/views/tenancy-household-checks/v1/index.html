@@ -1,7 +1,9 @@
-{% extends "layout/hackney.html" %}
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Start page" %}
+{% extends "layout/hackney-mobile.html" %}
 
 {% block pageTitle %}
-  Home – GOV.UK Prototype Kit
+  Home - GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -9,52 +11,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       
-      <div class="mmh-sidenav">
-        <ul>
-          <li class="mmh-sidenav-label">Navigation</li>
-          <li><a href="">Tenants details</a></li>
-          <li><a href="">Visit details</a></li>
-          <li><a href="">Occupation of tenancy</a></li>
-          <li><a href="">Proof of ID and residency</a></li>
-          <li><a href="">Rent and housing benefit</a></li>
-          <li><a href="">Repairs</a></li>
-          <li><a href="">The property</a></li>
-          <li><a href="">Anti-social behaviour</a></li>
-          <li><a href="">Fire hazards</a></li>
-          <li><a href="">Pets and animals</a></li>
-          <li><a href="">Disability</a></li>
-          <li><a href="">Referrals & safeguarding</a></li>
-          <li><a href="">Tenant enquiries</a></li>
-          <li><a href="">Check and sign</a></li>
-        </ul>
-      </div>
+      <div class="mmh-mobile-header">
+        
+        <h1 class="lbh-heading-h5 mmh-mobile-pagetitle">{{ pageName }}</h1>
+        {% include "tenancy-household-checks/v1/includes/mobile-nav.html" %}
+        
+      </div><!-- mmh-mobile-header -->
 
-      <!--p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+      <div class="mmh-mobile-content">
+        
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Tenure payment ref</dt>
+            <dd class="govuk-summary-list__value">0098765432</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Address</dt>
+            <dd class="govuk-summary-list__value">123 Upper Street, London, N1 6NQ</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Tenant name</dt>
+            <dd class="govuk-summary-list__value">Joseph Mash</dd>
+          </div>
+        </dl>
+        <a href="tenants-details" role="button" draggable="false" class="govuk-button lbh-button" data-module="govuk-button">
+          Start checks
+        </a>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+      </div><!-- mmh-mobile-content -->
 
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul-->
     </div>
   </div>
+
+  
 
 {% endblock %}

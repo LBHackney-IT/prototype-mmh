@@ -26,6 +26,9 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
+body {
+  font-family: $govuk-font-family;
+}
 
 .govuk-phase-banner {
   margin-top: 0;
@@ -121,7 +124,6 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 @media screen and (max-width: 600px) {
-
   .lbh .mmh-sidenav {
     border: 1px solid #333333;
     padding: 0.5em;
@@ -137,3 +139,106 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
   }
 
 }
+
+.lbh-mobile {
+  border: 1px solid grey;
+  margin: 0 auto;
+  max-width: 320px;
+
+  footer {
+  min-height: 1.5rem;
+  margin: 0;
+  color: #fff;
+  line-height: 1.5rem;
+  background-color: #0b0c0c;
+  }
+  
+  .govuk-main-wrapper--auto-spacing:first-child {
+    padding: 0;
+  }
+
+  .lbh-header__wrapper,
+  .lbh-header__title,
+  .lbh-header__content,
+  .lbh-header__logo,
+  .govuk-phase-banner__text {
+    display: block;
+  }
+  /*.govuk-phase-banner {
+    border-bottom: none;
+  }*/
+  .lbh-header__main{
+    padding: 1em 0.75em 0;
+  }
+  .govuk-width-container,
+  .govuk-phase-banner__content {
+    margin: 0;
+  }
+  .govuk-phase-banner__content {
+    padding: 0 0.75em;
+  }
+  .govuk-phase-banner__text {
+    margin-top: 0.5em;
+  }
+
+  // Mobile Summary List#
+  .govuk-summary-list__row,
+  .govuk-summary-list__key,
+  .govuk-summary-list__value {
+    border: none;
+    display: block;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 0.75em);
+  }
+  
+  .govuk-summary-list__row {
+    border-bottom: 1px solid #b1b4b6;
+    padding: 0.25em;
+  }
+
+}
+
+// Mobile navigation
+  .mmh-mobile-pagetitle {
+    padding: 0.75em;
+  }
+  .mmh-mobile-nav {
+    background: #ececec;
+    margin: 0;
+    padding: 0.25em 0;
+    display: none;
+  }
+  .lbh ul.mmh-mobile-nav__list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .mmh-mobile-nav__item {
+    margin: 0;
+    padding: 0.25em 0.75em;
+  }
+  .mmh-mobile-header {
+    position: relative;
+  }
+  .mmh-mobile-nav-toggle {
+    background: #ececec;
+    margin: 0;
+    padding: 0.85em 0.75em;
+    position: absolute;
+    top: 0; 
+    right: 0;
+
+    &:focus {
+      background: #ececec;
+      box-shadow: none;
+      outline: none;
+      text-decoration: underline;
+    }
+  }
+
+  .mmh-mobile-content {
+    margin-top: 0.75em;
+    padding: 0 0.75em;
+  }
