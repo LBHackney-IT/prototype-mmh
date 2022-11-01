@@ -198,6 +198,33 @@ body {
     padding: 0.25em;
   }
 
+  .govuk-label,
+  .lbh-input,
+  .govuk-fieldset__legend {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+
+  .govuk-label,
+  .govuk-fieldset {
+    margin-top: 0.75em;
+  }
+
+  .lbh-form-group{
+    margin: 1em 0;
+    .govuk-label.govuk-date-input__label {
+      font-size: 0.95rem;
+      font-weight: normal;
+      line-height: 1.5;
+      margin-top: 0;
+    }
+  }
+
+  .lbh-form-group {
+    margin-bottom: 2rem;
+  }
+
 }
 
 // Mobile navigation
@@ -220,6 +247,7 @@ body {
     padding: 0.25em 0.75em;
   }
   .mmh-mobile-header {
+    border-bottom: 1px solid #b1b4b6;
     position: relative;
   }
   .mmh-mobile-nav-toggle {
