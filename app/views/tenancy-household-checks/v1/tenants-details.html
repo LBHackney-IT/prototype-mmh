@@ -14,138 +14,169 @@
       {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
 
       <div class="mmh-mobile-content">
-        
-        <div class="govuk-form-group lbh-form-group">
-
-          <h2 class="lbh-heading-h5 lbh-form-group-heading">Tenant 1</h2>
+    
+        <form action="" method="post">
           
-          <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant1-name">
-            Name
-          </label>
-          <input
-            class="govuk-input lbh-input"
-            id="thc-{{v}}-tenantsdetails-tenant1-name"
-            name="thc-{{v}}-tenantsdetails-tenant1-name"
-            type="text"
-          />
+          <div class="govuk-form-group lbh-form-group">
 
-          <fieldset class="govuk-fieldset" role="group">
-            <legend class="govuk-fieldset__legend">Date of birth</legend>
-            <div class="govuk-date-input lbh-date-input" id="thc-{{v}}-tenantsdetails-tenant1-dob">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant1-dob-day">
-                    Day
-                  </label>
-                  <input
-                    class="govuk-input govuk-date-input__input govuk-input--width-2"
-                    id="thc-{{v}}-tenantsdetails-tenant1-dob-day"
-                    name="thc-{{v}}-tenantsdetails-tenant1-dob-day"
-                    type="text"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                  />
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant1-dob-month">
-                    Month
-                  </label>
-                  <input
-                    class="govuk-input govuk-date-input__input govuk-input--width-2"
-                    id="thc-{{v}}-tenantsdetails-tenant1-dob-month"
-                    name="thc-{{v}}-tenantsdetails-tenant1-dob-month"
-                    type="text"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                  />
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant1-dob-year">
-                    Year
-                  </label>
-                  <input
-                    class="govuk-input govuk-date-input__input govuk-input--width-4"
-                    id="thc-{{v}}-tenantsdetails-tenant1-dob-year"
-                    name="thc-{{v}}-tenantsdetails-tenant1-dob-year"
-                    type="text"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                  />
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        
-        <div class="govuk-form-group lbh-form-group">
+            <h2 class="lbh-heading-h5 lbh-form-group-heading">Tenant 1</h2>
+            
+            <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant1-name">Name</label>
+            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-name" name="thc-{{v}}-tenantsdetails-tenant1-name" type="text" />
 
-          <h2 class="lbh-heading-h5 lbh-form-group-heading">Tenant 2 (optional)</h2>
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend">Date of birth</legend>
+              <div class="govuk-date-input lbh-date-input" id="thc-{{v}}-tenantsdetails-tenant1-dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant1-dob-day">
+                      Day
+                    </label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="thc-{{v}}-tenantsdetails-tenant1-dob-day"
+                      name="thc-{{v}}-tenantsdetails-tenant1-dob-day"
+                      type="text"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                    />
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant1-dob-month">
+                      Month
+                    </label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="thc-{{v}}-tenantsdetails-tenant1-dob-month"
+                      name="thc-{{v}}-tenantsdetails-tenant1-dob-month"
+                      type="text"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                    />
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant1-dob-year">
+                      Year
+                    </label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-4"
+                      id="thc-{{v}}-tenantsdetails-tenant1-dob-year"
+                      name="thc-{{v}}-tenantsdetails-tenant1-dob-year"
+                      type="text"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                    />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            
+            <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant1-tel">Telephone</label>
+            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-tel" name="thc-{{v}}-tenantsdetails-tenant1-tel" type="text" />
+            
+            <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant1-email">Email</label>
+            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-email" name="thc-{{v}}-tenantsdetails-tenant1-email" type="email" />
+
+            <p class="govuk-!-margin-top-3"><a href="javascript:preventDefault();">Add another tenant</a></p>
+
+          </div>
+
           
-          <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant2-name">
-            Name
-          </label>
-          <input
-            class="govuk-input lbh-input"
-            id="thc-{{v}}-tenantsdetails-tenant2-name"
-            name="thc-{{v}}-tenantsdetails-tenant2-name"
-            type="text"
-          />
+          <!--div class="govuk-form-group lbh-form-group">
 
-          <fieldset class="govuk-fieldset" role="group">
-            <legend class="govuk-fieldset__legend">Date of birth</legend>
-            <div class="govuk-date-input lbh-date-input" id="thc-{{v}}-tenantsdetails-tenant2-dob">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant2-dob-day">
-                    Day
-                  </label>
-                  <input
-                    class="govuk-input govuk-date-input__input govuk-input--width-2"
-                    id="thc-{{v}}-tenantsdetails-tenant2-dob-day"
-                    name="thc-{{v}}-tenantsdetails-tenant2-dob-day"
-                    type="text"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                  />
+            <h2 class="lbh-heading-h5 lbh-form-group-heading">Tenant 2 (optional)</h2>
+            
+            <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant2-name">
+              Name
+            </label>
+            <input
+              class="govuk-input lbh-input"
+              id="thc-{{v}}-tenantsdetails-tenant2-name"
+              name="thc-{{v}}-tenantsdetails-tenant2-name"
+              type="text"
+            />
+
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend">Date of birth</legend>
+              <div class="govuk-date-input lbh-date-input" id="thc-{{v}}-tenantsdetails-tenant2-dob">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant2-dob-day">
+                      Day
+                    </label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="thc-{{v}}-tenantsdetails-tenant2-dob-day"
+                      name="thc-{{v}}-tenantsdetails-tenant2-dob-day"
+                      type="text"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                    />
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant2-dob-month">
+                      Month
+                    </label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="thc-{{v}}-tenantsdetails-tenant2-dob-month"
+                      name="thc-{{v}}-tenantsdetails-tenant2-dob-month"
+                      type="text"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                    />
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant2-dob-year">
+                      Year
+                    </label>
+                    <input
+                      class="govuk-input govuk-date-input__input govuk-input--width-4"
+                      id="thc-{{v}}-tenantsdetails-tenant2-dob-year"
+                      name="thc-{{v}}-tenantsdetails-tenant2-dob-year"
+                      type="text"
+                      pattern="[0-9]*"
+                      inputmode="numeric"
+                    />
+                  </div>
                 </div>
               </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant2-dob-month">
-                    Month
-                  </label>
-                  <input
-                    class="govuk-input govuk-date-input__input govuk-input--width-2"
-                    id="thc-{{v}}-tenantsdetails-tenant2-dob-month"
-                    name="thc-{{v}}-tenantsdetails-tenant2-dob-month"
-                    type="text"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                  />
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="thc-{{v}}-tenantsdetails-tenant2-dob-year">
-                    Year
-                  </label>
-                  <input
-                    class="govuk-input govuk-date-input__input govuk-input--width-4"
-                    id="thc-{{v}}-tenantsdetails-tenant2-dob-year"
-                    name="thc-{{v}}-tenantsdetails-tenant2-dob-year"
-                    type="text"
-                    pattern="[0-9]*"
-                    inputmode="numeric"
-                  />
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+            </fieldset>
+            
+            <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant2-tel">Telephone</label>
+            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant2-tel" name="thc-{{v}}-tenantsdetails-tenant2-tel" type="text" />
+            
+            <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant2-email">Email</label>
+            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant2-email" name="thc-{{v}}-tenantsdetails-tenant2-email" type="email" />
+          </div-->
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            <h2 class="lbh-heading-h5 lbh-form-group-heading">Other household members</h2>
+            <p class="govuk-!-margin-top-3"><a href="javascript:preventDefault();">Add household member</a></p>
+
+          </div>
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            <h2 class="lbh-heading-h5 lbh-form-group-heading">Next of kin</h2>
+            <p class="govuk-!-margin-top-3"><a href="javascript:preventDefault();">Add next of kin details</a></p>
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
 
       </div><!-- mmh-mobile-content -->
 

@@ -211,6 +211,15 @@ body {
     margin-top: 0.75em;
   }
 
+  
+  .govuk-radios__label {
+    margin-top: 0;
+  }
+
+  .lbh-radios {
+    margin-top: 0.5em;
+  }
+  
   .lbh-form-group{
     margin: 1em 0;
     .govuk-label.govuk-date-input__label {
@@ -269,4 +278,8 @@ body {
   .mmh-mobile-content {
     margin-top: 0.75em;
     padding: 0 0.75em;
+    
+    p { 
+      font-size: 1rem;
+    }
   }
