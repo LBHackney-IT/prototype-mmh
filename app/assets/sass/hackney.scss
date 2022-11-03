@@ -207,19 +207,43 @@ body {
   }
 
   .govuk-label,
-  .govuk-fieldset {
+  .govuk-fieldset,
+  .lbh-checkboxes {
     margin-top: 0.75em;
   }
 
   
-  .govuk-radios__label {
+  .govuk-radios__label,
+  .govuk-checkboxes__label,
+  .lbh-file-upload {
     margin-top: 0;
+  }
+  
+  .govuk-radios__label:has(.lbh-hint),
+  .govuk-checkboxes__label:has(+ .lbh-hint) {
+    margin-bottom: 0;
+  }
+
+  .govuk-checkboxes--small .govuk-checkboxes__label {
+    padding-bottom: 0;
+    padding-top: 0.5em;
   }
 
   .lbh-radios {
     margin-top: 0.5em;
   }
-  
+  .lbh-file-upload {
+    font-size: 0.9em;
+  }
+  .lbh-form-group .govuk-fieldset__legend + .govuk-hint.lbh-hint {
+    font-size: 0.9em;
+    margin: 0.25em 0;
+  }
+  .govuk-checkboxes__hint.lbh-hint {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+  }
   .lbh-form-group{
     margin: 1em 0;
     .govuk-label.govuk-date-input__label {

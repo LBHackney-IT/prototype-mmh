@@ -22,7 +22,7 @@
             <h2 class="lbh-heading-h5 lbh-form-group-heading">Tenant 1</h2>
             
             <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant1-name">Name</label>
-            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-name" name="thc-{{v}}-tenantsdetails-tenant1-name" type="text" />
+            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-name" name="thc-{{v}}-tenantsdetails-tenant1-name" type="text" value="{{ data['thc-'+v+'-tenantsdetails-tenant1-name'] }}" />
 
             <fieldset class="govuk-fieldset" role="group">
               <legend class="govuk-fieldset__legend">Date of birth</legend>
@@ -33,12 +33,13 @@
                       Day
                     </label>
                     <input
-                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      class="govuk-input lbh-input govuk-date-input__input govuk-input--width-2"
                       id="thc-{{v}}-tenantsdetails-tenant1-dob-day"
                       name="thc-{{v}}-tenantsdetails-tenant1-dob-day"
                       type="text"
                       pattern="[0-9]*"
                       inputmode="numeric"
+                      value="{{ data['thc-'+v+'-tenantsdetails-tenant1-dob-day'] }}" 
                     />
                   </div>
                 </div>
@@ -48,12 +49,13 @@
                       Month
                     </label>
                     <input
-                      class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      class="govuk-input lbh-input govuk-date-input__input govuk-input--width-2"
                       id="thc-{{v}}-tenantsdetails-tenant1-dob-month"
                       name="thc-{{v}}-tenantsdetails-tenant1-dob-month"
                       type="text"
                       pattern="[0-9]*"
                       inputmode="numeric"
+                      value="{{ data['thc-'+v+'-tenantsdetails-tenant1-dob-month'] }}" 
                     />
                   </div>
                 </div>
@@ -63,12 +65,13 @@
                       Year
                     </label>
                     <input
-                      class="govuk-input govuk-date-input__input govuk-input--width-4"
+                      class="govuk-input lbh-input govuk-date-input__input govuk-input--width-4"
                       id="thc-{{v}}-tenantsdetails-tenant1-dob-year"
                       name="thc-{{v}}-tenantsdetails-tenant1-dob-year"
                       type="text"
                       pattern="[0-9]*"
                       inputmode="numeric"
+                      value="{{ data['thc-'+v+'-tenantsdetails-tenant1-dob-year'] }}" 
                     />
                   </div>
                 </div>
@@ -76,10 +79,10 @@
             </fieldset>
             
             <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant1-tel">Telephone</label>
-            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-tel" name="thc-{{v}}-tenantsdetails-tenant1-tel" type="text" />
+            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-tel" name="thc-{{v}}-tenantsdetails-tenant1-tel" type="text" value="{{ data['thc-'+v+'-tenantsdetails-tenant1-tel'] }}" />
             
             <label class="govuk-label" for="thc-{{v}}-tenantsdetails-tenant1-email">Email</label>
-            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-email" name="thc-{{v}}-tenantsdetails-tenant1-email" type="email" />
+            <input class="govuk-input lbh-input" id="thc-{{v}}-tenantsdetails-tenant1-email" name="thc-{{v}}-tenantsdetails-tenant1-email" type="email" value="{{ data['thc-'+v+'-tenantsdetails-tenant1-email'] }}" />
 
             <p class="govuk-!-margin-top-3"><a href="javascript:preventDefault();">Add another tenant</a></p>
 

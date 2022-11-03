@@ -30,11 +30,13 @@
               items: [
                 {
                   value: "Yes",
-                  text: "Yes"
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-visitdetails-visitcompleted", "Yes")
                 },
                 {
                   value: "No",
-                  text: "No"
+                  text: "No",
+                  checked: checked("thc-"+v+"-visitdetails-visitcompleted", "No")
                 }
               ]
             }) }}
@@ -51,11 +53,13 @@
                 items: [
                   {
                     value: "Yes",
-                    text: "Yes"
+                    text: "Yes",
+                    checked: checked("thc-"+v+"-visitdetails-tenantinoccupation", "Yes")
                   },
                   {
                     value: "No",
-                    text: "No"
+                    text: "No",
+                    checked: checked("thc-"+v+"-visitdetails-tenantinoccupation", "No")
                   }
                 ]
               }) }}
@@ -75,11 +79,13 @@
                   text: "Yes",
                   conditional: {
                     html: occupiedHtml
-                  }
+                  },
+                  checked: checked("thc-"+v+"-visitdetails-propertyoccupied", "Yes")
                 },
                 {
                   value: "No",
-                  text: "No"
+                  text: "No",
+                  checked: checked("thc-"+v+"-visitdetails-propertyoccupied", "No")
                 }
               ]
             }) }}

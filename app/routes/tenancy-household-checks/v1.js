@@ -12,4 +12,13 @@ module.exports = function (router) {
     res.redirect(path+'visit-details');
   })
 
+  router.post(path+'visit-details', function (req, res) {
+    /*if (req.session.data["eligibility-"+v+"-didyouapply"] == "Yes"){
+      res.redirect(path+'granted-refused-permission');
+    } else {
+      res.redirect(path+'shutter-did-you-apply');
+    }*/
+    res.redirect(path+'proof-id-residency');
+  })
+
 }
