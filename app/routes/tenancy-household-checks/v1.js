@@ -13,12 +13,19 @@ module.exports = function (router) {
   })
 
   router.post(path+'visit-details', function (req, res) {
-    /*if (req.session.data["eligibility-"+v+"-didyouapply"] == "Yes"){
-      res.redirect(path+'granted-refused-permission');
-    } else {
-      res.redirect(path+'shutter-did-you-apply');
-    }*/
     res.redirect(path+'proof-id-residency');
+  })
+
+  router.post(path+'proof-id-residency', function (req, res) {
+    res.redirect(path+'rent-housing-benefit');
+  })
+
+  router.post(path+'rent-housing-benefit', function (req, res) {
+    res.redirect(path+'repairs');
+  })
+
+  router.post(path+'repairs', function (req, res) {
+    res.redirect(path+'property');
   })
 
 }

@@ -258,6 +258,11 @@ body {
     margin-bottom: 2rem;
   }
 
+  .govuk-radios__conditional,
+  .govuk-radios__conditional label{
+    margin-top: 0;
+  }
+
 }
 
 // Mobile navigation
