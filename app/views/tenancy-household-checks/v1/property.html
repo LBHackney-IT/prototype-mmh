@@ -18,8 +18,168 @@
         <form action="" method="post">
           
           <div class="govuk-form-group lbh-form-group">
+
+            {{ govukInput({
+              id: "thc-"+v+"-property-location",
+              name: "thc-"+v+"-property-location",
+              classes: "lbh-input",
+              label: {
+                classes: "govuk-!-margin-bottom-0",
+                text: "Where is the property located"
+              },
+              hint: {
+                classes: "lbh-hint",
+                text: "For example, ground floor"
+              },
+              value: data['thc-'+v+'-property-location']
+            }) }}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-property-garden",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Does the property have a garden?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-property-garden", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-property-garden", "No")
+                }
+              ]
+            }) }}
+
+            {% set flooringHtml %}
+              {{ govukInput({
+                id: "thc-"+v+"-property-flooring-detail",
+                name: "thc-"+v+"-property-flooring-detail",
+                classes: "lbh-input",
+                label: {
+                  classes: "govuk-!-margin-bottom-0",
+                  text: "In which rooms?"
+                },
+                value: data['thc-'+v+'-property-flooring-detail']
+              }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-property-flooring",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Does the property have any laminate flooring?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-property-flooring", "Yes"),
+                  conditional: {
+                    html: flooringHtml
+                  }
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-property-flooring", "No")
+                }
+              ]
+            }) }}
+
+            {% set evidenceHtml %}
+              {{ govukInput({
+                id: "thc-"+v+"-property-evidence-detail",
+                name: "thc-"+v+"-property-evidence-detail",
+                classes: "lbh-input",
+                label: {
+                  classes: "govuk-!-margin-bottom-0",
+                  text: "Was authorisation sought and approved?"
+                },
+                value: data['thc-'+v+'-property-evidence-detail']
+              }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-property-evidence",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Evidence of structural improvements differing from when originally let?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-property-evidence", "Yes"),
+                  conditional: {
+                    html: evidenceHtml
+                  }
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-property-evidence", "No")
+                }
+              ]
+            }) }}
+
+            {% set damageHtml %}
+              {{ govukTextarea({
+                id: "thc-"+v+"-property-damage-detail",
+                name: "thc-"+v+"-property-damage-detail",
+                classes: "lbh-textarea",
+                label: {
+                  text: "Details of damage"
+                },
+                value: data['thc-'+v+'-property-damage-detail']
+              }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-property-damage",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Any signs of damage caused to the proprty?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-property-damage", "Yes"),
+                  conditional: {
+                    html: damageHtml
+                  }
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-property-damage", "No")
+                }
+              ]
+            }) }}
+
+            {{ govukTextarea({
+              id: "thc-"+v+"-property-comments",
+              name: "thc-"+v+"-property-comments",
+              classes: "lbh-textarea",
+              label: {
+                text: "Additional comments (optional)"
+              },
+              value: data['thc-'+v+'-property-comments']
+            }) }}
             
-            
+
 
           </div>
           

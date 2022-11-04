@@ -28,4 +28,8 @@ module.exports = function (router) {
     res.redirect(path+'property');
   })
 
+  router.post(path+'property', function (req, res) {
+    res.redirect(path+'anti-social-behaviour');
+  })
+
 }

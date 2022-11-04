@@ -20,7 +20,7 @@
           <div class="govuk-form-group lbh-form-group">
 
             {{ govukRadios({
-              name: "thc-"+v+"-repairs-quesries",
+              name: "thc-"+v+"-repairs-queries",
               classes: "lbh-radios",
               fieldset: {
                 legend: {
@@ -31,12 +31,12 @@
                 {
                   value: "Yes",
                   text: "Yes",
-                  checked: checked("thc-"+v+"-repairs-quesries", "Yes")
+                  checked: checked("thc-"+v+"-repairs-queries", "Yes")
                 },
                 {
                   value: "No",
                   text: "No",
-                  checked: checked("thc-"+v+"-repairs-quesries", "No")
+                  checked: checked("thc-"+v+"-repairs-queries", "No")
                 }
               ]
             }) }}

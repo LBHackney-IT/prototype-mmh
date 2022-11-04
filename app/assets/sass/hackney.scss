@@ -235,7 +235,8 @@ body {
   .lbh-file-upload {
     font-size: 0.9em;
   }
-  .lbh-form-group .govuk-fieldset__legend + .govuk-hint.lbh-hint {
+  .lbh-form-group .govuk-fieldset__legend + .govuk-hint.lbh-hint,
+  .lbh-form-group .govuk-label + .govuk-hint.lbh-hint {
     font-size: 0.9em;
     margin: 0.25em 0;
   }
@@ -261,6 +262,10 @@ body {
   .govuk-radios__conditional,
   .govuk-radios__conditional label{
     margin-top: 0;
+  }
+
+  .govuk-radios__conditional .lbh-textarea {
+    margin-bottom: 0;
   }
 
 }
