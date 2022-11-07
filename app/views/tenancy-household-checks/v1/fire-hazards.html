@@ -1,0 +1,196 @@
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Fire hazards" %}
+{% extends "layout/hackney-mobile/v1.html" %}
+
+{% block pageTitle %}
+  Home - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+
+      <div class="mmh-mobile-content">
+    
+        <form action="" method="post">
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {% set metalgatesHtml %}
+              {{ govukRadios({
+                name: "thc-"+v+"-firehazards-metalgates-items",
+                classes: "lbh-radios",
+                fieldset: {
+                  legend: {
+                    text: "Has the tenant left combustible items behind these gates?"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("thc-"+v+"-firehazards-metalgates-items", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("thc-"+v+"-firehazards-metalgates-items", "No")
+                  }
+                ]
+              }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-firehazards-metalgates",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Has the tenant had metal gates erected across the front entrance doors?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: metalgatesHtml
+                  },
+                  checked: checked("thc-"+v+"-firehazards-metalgates", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-firehazards-metalgates", "No")
+                }
+              ]
+            }) }}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-firehazards-communal-plants",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Has the tenant placed door mats and/or potted plants in communal areas?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-firehazards-communal-plants", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-firehazards-communal-plants", "No")
+                }
+              ]
+            }) }}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-firehazards-communal-plants",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Has the tenant left combustible items in communal areas?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-firehazards-communal-plants", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-firehazards-communal-plants", "No")
+                }
+              ]
+            }) }}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-firehazards-storingmaterials",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Is the tenant storing materials that can catch fire in their home?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-firehazards-storingmaterials", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-firehazards-storingmaterials", "No")
+                }
+              ]
+            }) }}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-firehazards-fireexit",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Does the property have a secondary fire exit that is accessible and easy to use?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-firehazards-fireexit", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-firehazards-fireexit", "No")
+                }
+              ]
+            }) }}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-firehazards-smokealarm",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Is there a hard wired smoke alarm that works when tested?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-firehazards-smokealarm", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-firehazards-smokealarm", "No")
+                }
+              ]
+            }) }}
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+      </div><!-- mmh-mobile-content -->
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}

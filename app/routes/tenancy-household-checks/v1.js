@@ -32,4 +32,28 @@ module.exports = function (router) {
     res.redirect(path+'anti-social-behaviour');
   })
 
+  router.post(path+'anti-social-behaviour', function (req, res) {
+    res.redirect(path+'fire-hazards');
+  })
+
+  router.post(path+'fire-hazards', function (req, res) {
+    res.redirect(path+'pets-animals');
+  })
+
+  router.post(path+'pets-animals', function (req, res) {
+    res.redirect(path+'disability');
+  })
+
+  router.post(path+'disability', function (req, res) {
+    res.redirect(path+'referrals-safeguarding');
+  })
+
+  router.post(path+'referrals-safeguarding', function (req, res) {
+    res.redirect(path+'tenant-enquiries');
+  })
+
+  router.post(path+'tenant-enquiries', function (req, res) {
+    res.redirect(path+'check-sign');
+  })
+
 }

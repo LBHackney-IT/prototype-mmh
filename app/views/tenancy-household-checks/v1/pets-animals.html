@@ -1,5 +1,5 @@
 {% set serviceName = "Tenancy & Household Checks" %}
-{% set pageName = "Anti-social behaviour" %}
+{% set pageName = "Pets and animals" %}
 {% extends "layout/hackney-mobile/v1.html" %}
 
 {% block pageTitle %}
@@ -19,65 +19,54 @@
           
           <div class="govuk-form-group lbh-form-group">
 
-            {% set discussedHtml %}
+            {% set permissionHtml %}
               {{ govukRadios({
-                name: "thc-"+v+"-asb-discussed",
+                name: "thc-"+v+"-petsanimals-permission",
                 classes: "lbh-radios",
                 fieldset: {
                   legend: {
-                    text: "Have you discussed what constitutes an ASB with the tenant?"
+                    text: "Has permission been granted to keep the pets/animals?"
                   }
                 },
                 items: [
                   {
                     value: "Yes",
                     text: "Yes",
-                    checked: checked("thc-"+v+"-asb-discussed", "Yes")
+                    checked: checked("thc-"+v+"-petsanimals-permission", "Yes")
                   },
                   {
                     value: "No",
                     text: "No",
-                    checked: checked("thc-"+v+"-asb-discussed", "No")
+                    checked: checked("thc-"+v+"-petsanimals-permission", "No")
                   }
                 ]
               }) }}
             {% endset -%}
 
             {{ govukRadios({
-              name: "thc-"+v+"-asb-constitutes",
+              name: "thc-"+v+"-petsanimals",
               classes: "lbh-radios",
               fieldset: {
                 legend: {
-                  text: "Does the tenant know what constitues an ASB?"
+                  text: "Are there any pets or animals in the property?"
                 }
               },
               items: [
                 {
                   value: "Yes",
                   text: "Yes",
-                  checked: checked("thc-"+v+"-asb-constitutes", "Yes")
+                  conditional: {
+                    html: permissionHtml
+                  },
+                  checked: checked("thc-"+v+"-petsanimals", "Yes")
                 },
                 {
                   value: "No",
                   text: "No",
-                  conditional: {
-                    html: discussedHtml
-                  },
-                  checked: checked("thc-"+v+"-asb-constitutes", "No")
+                  checked: checked("thc-"+v+"-petsanimals", "No")
                 }
               ]
             }) }}
-
-            {{ govukTextarea({
-                id: "thc-"+v+"-asb-followup",
-                name: "thc-"+v+"-asb-followup",
-                classes: "lbh-textarea",
-                rows: 3,
-                label: {
-                  text: "Any follow up action required?"
-                },
-                value: data['thc-'+v+'-asb-followup']
-              }) }}
 
           </div>
           

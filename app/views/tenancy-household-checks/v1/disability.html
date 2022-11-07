@@ -1,5 +1,5 @@
 {% set serviceName = "Tenancy & Household Checks" %}
-{% set pageName = "Anti-social behaviour" %}
+{% set pageName = "Disability" %}
 {% extends "layout/hackney-mobile/v1.html" %}
 
 {% block pageTitle %}
@@ -19,65 +19,65 @@
           
           <div class="govuk-form-group lbh-form-group">
 
-            {% set discussedHtml %}
+            {% set permissionHtml %}
               {{ govukRadios({
-                name: "thc-"+v+"-asb-discussed",
+                name: "thc-"+v+"-disability-pip",
                 classes: "lbh-radios",
                 fieldset: {
                   legend: {
-                    text: "Have you discussed what constitutes an ASB with the tenant?"
+                    text: "Is the tenant in receipt of Personal Independent Payment?"
                   }
                 },
                 items: [
                   {
                     value: "Yes",
                     text: "Yes",
-                    checked: checked("thc-"+v+"-asb-discussed", "Yes")
+                    checked: checked("thc-"+v+"-disability-pip", "Yes")
                   },
                   {
                     value: "No",
                     text: "No",
-                    checked: checked("thc-"+v+"-asb-discussed", "No")
+                    checked: checked("thc-"+v+"-disability-pip", "No")
                   }
                 ]
               }) }}
+
+              {{ govukTextarea({
+                  id: "thc-"+v+"-disability-description",
+                  name: "thc-"+v+"-disability-description",
+                  classes: "lbh-textarea",
+                  rows: 3,
+                  label: {
+                    text: "How does the tenant describe their disability?"
+                  },
+                  value: data['thc-'+v+'-disability-description']
+                }) }}
             {% endset -%}
 
             {{ govukRadios({
-              name: "thc-"+v+"-asb-constitutes",
+              name: "thc-"+v+"-disability",
               classes: "lbh-radios",
               fieldset: {
                 legend: {
-                  text: "Does the tenant know what constitues an ASB?"
+                  text: "Does the tenant have a disability?"
                 }
               },
               items: [
                 {
                   value: "Yes",
                   text: "Yes",
-                  checked: checked("thc-"+v+"-asb-constitutes", "Yes")
+                  conditional: {
+                    html: permissionHtml
+                  },
+                  checked: checked("thc-"+v+"-disability", "Yes")
                 },
                 {
                   value: "No",
                   text: "No",
-                  conditional: {
-                    html: discussedHtml
-                  },
-                  checked: checked("thc-"+v+"-asb-constitutes", "No")
+                  checked: checked("thc-"+v+"-disability", "No")
                 }
               ]
             }) }}
-
-            {{ govukTextarea({
-                id: "thc-"+v+"-asb-followup",
-                name: "thc-"+v+"-asb-followup",
-                classes: "lbh-textarea",
-                rows: 3,
-                label: {
-                  text: "Any follow up action required?"
-                },
-                value: data['thc-'+v+'-asb-followup']
-              }) }}
 
           </div>
           
