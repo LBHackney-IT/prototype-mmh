@@ -1,6 +1,6 @@
 {% set serviceName = "Tenancy & Household Checks" %}
 {% set pageName = "Start page" %}
-{% extends "layout/hackney-mobile.html" %}
+{% extends "layout/hackney-mobile/v1.html" %}
 
 {% block pageTitle %}
   Home - GOV.UK Prototype Kit
@@ -11,12 +11,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       
-      <div class="mmh-mobile-header">
-        
-        <h1 class="lbh-heading-h5 mmh-mobile-pagetitle">{{ pageName }}</h1>
-        {% include "tenancy-household-checks/v1/includes/mobile-nav.html" %}
-        
-      </div><!-- mmh-mobile-header -->
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
 
       <div class="mmh-mobile-content">
         

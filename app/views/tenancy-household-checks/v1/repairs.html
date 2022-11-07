@@ -1,0 +1,66 @@
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Repairs" %}
+{% extends "layout/hackney-mobile/v1.html" %}
+
+{% block pageTitle %}
+  Home - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+
+      <div class="mmh-mobile-content">
+    
+        <form action="" method="post">
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {{ govukRadios({
+              name: "thc-"+v+"-repairs-queries",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Are there any repair queries?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-repairs-queries", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-repairs-queries", "No")
+                }
+              ]
+            }) }}
+
+          </div>
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            <h2 class="lbh-heading-h5 lbh-form-group-heading">Repair details</h2>
+            <p class="govuk-!-margin-top-3"><a href="javascript:preventDefault();">Add repair details</a></p>
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+      </div><!-- mmh-mobile-content -->
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}

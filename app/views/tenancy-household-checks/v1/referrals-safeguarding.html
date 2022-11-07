@@ -1,0 +1,164 @@
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Referrals and safeguarding" %}
+{% extends "layout/hackney-mobile/v1.html" %}
+
+{% block pageTitle %}
+  Home - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+
+      <div class="mmh-mobile-content">
+    
+        <form action="" method="post">
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {% set otherHtml %}
+              {{ govukInput({
+                id: "thc-"+v+"-referrals-other",
+                name: "thc-"+v+"-referrals-other",
+                label: {
+                  text: "Name of agencies or services"
+                },
+                value: data["thc-"+v+"-referrals-other"]
+              }) }}
+            {% endset -%}
+
+            {% set whichHtml %}
+              {{ govukCheckboxes({
+                idPrefix: "thc-"+v+"-referrals-which",
+                name: "thc-"+v+"-referrals-which",
+                classes: "govuk-checkboxes--small lbh-checkboxes",
+                fieldset: {
+                  legend: {
+                    text: "Which referrals did you make?"
+                  }
+                },
+                items: [
+                  {
+                    value: "Mental health services",
+                    text: "Mental health services",
+                    checked: checked("thc-"+v+"-referrals-which", "Mental health services")
+                  },
+                  {
+                    value: "Tenancy investigation",
+                    text: "Tenancy investigation",
+                    checked: checked("thc-"+v+"-referrals-which", "Tenancy investigation")
+                  },
+                  {
+                    value: "Financial inclusion",
+                    text: "Financial inclusion",
+                    checked: checked("thc-"+v+"-referrals-which", "Financial inclusion")
+                  },
+                  {
+                    value: "Adult social care",
+                    text: "Adult social care",
+                    checked: checked("thc-"+v+"-referrals-which", "Adult social care")
+                  },
+                  {
+                    value: "Hackney advice network",
+                    text: "Hackney advice network",
+                    checked: checked("thc-"+v+"-referrals-which", "Hackney advice network")
+                  },
+                  {
+                    value: "Organisation through better conversations tool",
+                    text: "Organisation through better conversations tool",
+                    checked: checked("thc-"+v+"-referrals-which", "Organisation through better conversations tool")
+                  },
+                  {
+                    value: "Other",
+                    text: "Other",
+                    conditional: {
+                      html: otherHtml
+                    },
+                    checked: checked("thc-"+v+"-referrals-which", "Other")
+                  }
+                ]
+              }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-referrals",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Have you made a referral to any other agencies or services?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: whichHtml
+                  },
+                  checked: checked("thc-"+v+"-referrals", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-referrals", "No")
+                }
+              ]
+            }) }}
+
+            {% set concernsHtml %}
+              {{ govukTextarea({
+                id: "thc-"+v+"-referrals-concerns-details",
+                name: "thc-"+v+"-referrals-concerns-details",
+                classes: "lbh-textarea",
+                rows: 3,
+                label: {
+                  text: "Details of safeguarding concerns"
+                },
+                value: data["thc-"+v+"-referrals-concerns-details"]
+              }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-referrals-concerns",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Are there apparent child or adult safeguarding concerns?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: concernsHtml
+                  },
+                  checked: checked("thc-"+v+"-referrals-concerns", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-referrals-concerns", "No")
+                }
+              ]
+            }) }}
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+      </div><!-- mmh-mobile-content -->
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}

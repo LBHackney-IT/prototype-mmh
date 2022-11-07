@@ -1,0 +1,97 @@
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Disability" %}
+{% extends "layout/hackney-mobile/v1.html" %}
+
+{% block pageTitle %}
+  Home - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+
+      <div class="mmh-mobile-content">
+    
+        <form action="" method="post">
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {% set permissionHtml %}
+              {{ govukRadios({
+                name: "thc-"+v+"-disability-pip",
+                classes: "lbh-radios",
+                fieldset: {
+                  legend: {
+                    text: "Is the tenant in receipt of Personal Independent Payment?"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("thc-"+v+"-disability-pip", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("thc-"+v+"-disability-pip", "No")
+                  }
+                ]
+              }) }}
+
+              {{ govukTextarea({
+                  id: "thc-"+v+"-disability-description",
+                  name: "thc-"+v+"-disability-description",
+                  classes: "lbh-textarea",
+                  rows: 3,
+                  label: {
+                    text: "How does the tenant describe their disability?"
+                  },
+                  value: data['thc-'+v+'-disability-description']
+                }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-disability",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Does the tenant have a disability?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: permissionHtml
+                  },
+                  checked: checked("thc-"+v+"-disability", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-disability", "No")
+                }
+              ]
+            }) }}
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+      </div><!-- mmh-mobile-content -->
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}

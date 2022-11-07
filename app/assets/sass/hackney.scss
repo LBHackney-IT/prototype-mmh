@@ -198,6 +198,76 @@ body {
     padding: 0.25em;
   }
 
+  .govuk-label,
+  .lbh-input,
+  .govuk-fieldset__legend {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+
+  .govuk-label,
+  .govuk-fieldset,
+  .lbh-checkboxes {
+    margin-top: 0.75em;
+  }
+
+  
+  .govuk-radios__label,
+  .govuk-checkboxes__label,
+  .lbh-file-upload {
+    margin-top: 0;
+  }
+  
+  .govuk-radios__label:has(.lbh-hint),
+  .govuk-checkboxes__label:has(+ .lbh-hint) {
+    margin-bottom: 0;
+  }
+
+  .govuk-checkboxes--small .govuk-checkboxes__label {
+    padding-bottom: 0;
+    padding-top: 0.5em;
+  }
+
+  .lbh-radios {
+    margin-top: 0.5em;
+  }
+  .lbh-file-upload {
+    font-size: 0.9em;
+  }
+  .lbh-form-group .govuk-fieldset__legend + .govuk-hint.lbh-hint,
+  .lbh-form-group .govuk-label + .govuk-hint.lbh-hint {
+    font-size: 0.9em;
+    margin: 0.25em 0;
+  }
+  .govuk-checkboxes__hint.lbh-hint {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .lbh-form-group{
+    margin: 1em 0;
+    .govuk-label.govuk-date-input__label {
+      font-size: 0.95rem;
+      font-weight: normal;
+      line-height: 1.5;
+      margin-top: 0;
+    }
+  }
+
+  .lbh-form-group {
+    margin-bottom: 2rem;
+  }
+
+  .govuk-radios__conditional,
+  .govuk-radios__conditional label{
+    margin-top: 0;
+  }
+
+  .govuk-radios__conditional .lbh-textarea {
+    margin-bottom: 0;
+  }
+
 }
 
 // Mobile navigation
@@ -220,6 +290,7 @@ body {
     padding: 0.25em 0.75em;
   }
   .mmh-mobile-header {
+    border-bottom: 1px solid #b1b4b6;
     position: relative;
   }
   .mmh-mobile-nav-toggle {
@@ -241,4 +312,8 @@ body {
   .mmh-mobile-content {
     margin-top: 0.75em;
     padding: 0 0.75em;
+    
+    p { 
+      font-size: 1rem;
+    }
   }

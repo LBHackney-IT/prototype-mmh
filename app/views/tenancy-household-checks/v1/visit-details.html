@@ -1,0 +1,108 @@
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Visit details" %}
+{% extends "layout/hackney-mobile/v1.html" %}
+
+{% block pageTitle %}
+  Home - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+
+      <div class="mmh-mobile-content">
+    
+        <form action="" method="post">
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {{ govukRadios({
+              name: "thc-"+v+"-visitdetails-visitcompleted",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Was the visit completed inside the property?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-visitdetails-visitcompleted", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-visitdetails-visitcompleted", "No")
+                }
+              ]
+            }) }}
+
+            {% set occupiedHtml %}
+              {{ govukRadios({
+                name: "thc-"+v+"-visitdetails-tenantinoccupation",
+                classes: "lbh-radios",
+                fieldset: {
+                  legend: {
+                    text: "Is the person in occupation the tenant?"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes",
+                    checked: checked("thc-"+v+"-visitdetails-tenantinoccupation", "Yes")
+                  },
+                  {
+                    value: "No",
+                    text: "No",
+                    checked: checked("thc-"+v+"-visitdetails-tenantinoccupation", "No")
+                  }
+                ]
+              }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-visitdetails-propertyoccupied",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Is the property occupied?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: occupiedHtml
+                  },
+                  checked: checked("thc-"+v+"-visitdetails-propertyoccupied", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-visitdetails-propertyoccupied", "No")
+                }
+              ]
+            }) }}
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+      </div><!-- mmh-mobile-content -->
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}

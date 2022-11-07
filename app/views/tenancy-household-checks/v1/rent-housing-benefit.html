@@ -1,0 +1,134 @@
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Rent and housing benefit" %}
+{% extends "layout/hackney-mobile/v1.html" %}
+
+{% block pageTitle %}
+  Home - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+
+      <div class="mmh-mobile-content">
+    
+        <form action="" method="post">
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {% set claimingHtml %}
+                <label class="govuk-label lbh-label" for="thc-{{v}}-housingbenefit-claiming-detail">
+                  Housing benefit details
+                </label>
+                <textarea
+                  class="govuk-textarea lbh-textarea"
+                  id="thc-{{v}}-housingbenefit-claiming-detail"
+                  name="thc-{{v}}-housingbenefit-claiming-detail"
+                  rows="3"
+                ></textarea>
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-housingbenefit-claiming",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Is the tenant claiming housing benefit?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: claimingHtml
+                  },
+                  checked: checked("thc-"+v+"-housingbenefit-claiming", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-housingbenefit-claiming", "No")
+                }
+              ]
+            }) }}
+
+            {% set arrearsHtml %}
+                <label class="govuk-label lbh-label" for="thc-{{v}}-housingbenefit-arrears-detail">
+                  How does the tenant propose to clear the debt?
+                </label>
+                <textarea
+                  class="govuk-textarea lbh-textarea"
+                  id="thc-{{v}}-housingbenefit-arrears-detail"
+                  name="thc-{{v}}-housingbenefit-arrears-detail"
+                  rows="3"
+                ></textarea>
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-housingbenefit-arrears",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Is the tenant in rent arrears?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: arrearsHtml
+                  },
+                  checked: checked("thc-"+v+"-housingbenefit-arrears", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-housingbenefit-arrears", "No")
+                }
+              ]
+            }) }}
+
+            {{ govukRadios({
+              name: "thc-"+v+"-housingbenefit-referred",
+              classes: "lbh-radios",
+              fieldset: {
+                legend: {
+                  text: "Does the tenant wish to be referred to a Financial Inclusion Officer?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: checked("thc-"+v+"-housingbenefit-referred", "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: checked("thc-"+v+"-housingbenefit-referred", "No")
+                }
+              ]
+            }) }}
+
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+      </div><!-- mmh-mobile-content -->
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}

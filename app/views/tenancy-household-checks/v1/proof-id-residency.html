@@ -1,0 +1,269 @@
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Proof of ID and residency" %}
+{% extends "layout/hackney-mobile/v1.html" %}
+
+{% block pageTitle %}
+  Home - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+
+      <div class="mmh-mobile-content">
+    
+        <form action="" method="post">
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {% set PassportHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-id-passport">
+                Upload passport
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-id-passport" name="thc-{{v}}-proof-id-passport" type="file" />
+            {% endset -%}
+
+            {% set BirthCertificateHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-id-birthcertificate">
+                Upload birth certificate
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-id-birthcertificate" name="thc-{{v}}-proof-id-birthcertificate" type="file" />
+            {% endset -%}
+
+            {% set ImmigrationHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-id-immigrationdocument">
+                Upload immigration document
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-id-immigrationdocument" name="thc-{{v}}-proof-id-immigrationdocument" type="file" />
+            {% endset -%}
+
+            {% set DrivingLicenceHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-id-drivinglicence">
+                Upload driving licence
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-id-drivinglicence" name="thc-{{v}}-proof-id-drivinglicence" type="file" />
+            {% endset -%}
+
+            {% set ProvisionalDrivingHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-id-provisionaldriving">
+                Upload provisional driving licence
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-id-provisionaldriving" name="thc-{{v}}-proof-id-provisionaldriving" type="file" />
+            {% endset -%}
+
+            {% set ResidencePermitHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-id-residencepermit">
+                Upload residence permit
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-id-residencepermit" name="thc-{{v}}-proof-id-residencepermit" type="file" />
+            {% endset -%}
+
+            {% set FreedomPassHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-id-freedompass">
+                Upload freedom pass
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-id-freedompass" name="thc-{{v}}-proof-id-freedompass" type="file" />
+            {% endset -%}
+
+            {{ govukCheckboxes({
+              name: "thc-"+v+"-proof-id",
+              classes: "govuk-checkboxes--small lbh-checkboxes",
+              fieldset: {
+                legend: {
+                  text: "Proof of ID documents"
+                }
+              },
+              hint: {
+                classes: "lbh-hint",
+                text: "The tenant will need to provide 2 proofs of identity, 1 of which must be photographic ID"
+              },
+              items: [
+                {
+                  value: "Passport",
+                  text: "Passport",
+                  conditional: {
+                    html: PassportHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-id", "Passport")
+                },
+                {
+                  value: "Birth Certificate",
+                  text: "Birth Certificate",
+                  conditional: {
+                    html: BirthCertificateHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-id", "Birth Certificate")
+                },
+                {
+                  value: "Immigration documents from Home Office confirming status",
+                  text: "Immigration documents from Home Office confirming status",
+                  conditional: {
+                    html: ImmigrationHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-id", "Immigration documents from Home Office confirming status")
+                },
+                {
+                  value: "Full driving licence at current address",
+                  text: "Full driving licence at current address",
+                  conditional: {
+                    html: DrivingLicenceHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-id", "Full driving licence at current address")
+                },
+                {
+                  value: "Photo provisional driving licence at current address",
+                  text: "Photo provisional driving licence at current address",
+                  conditional: {
+                    html: ProvisionalDrivingHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-id", "Photo provisional driving licence at current address")
+                },
+                {
+                  value: "Residence permit (EU nationals)",
+                  text: "Residence permit (EU nationals)",
+                  conditional: {
+                    html: ResidencePermitHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-id", "Residence permit (EU nationals)")
+                },
+                {
+                  value: "Freedom pass",
+                  text: "Freedom pass",
+                  conditional: {
+                    html: FreedomPassHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-id", "Freedom pass")
+                }
+              ]
+            }) }}
+
+          </div>
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {% set UtilityHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-residency-utilitybill">
+                Upload utility bill
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-residency-utilitybill" name="thc-{{v}}-proof-id-utilitybill" type="file" />
+            {% endset -%}
+
+            {% set SavingsHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-residency-savings">
+                Upload proof of savings
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-residency-savings" name="thc-{{v}}-proof-id-savings" type="file" />
+            {% endset -%}
+
+            {% set AwardLetterHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-residency-awardletter">
+                Upload award letter
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-residency-awardletter" name="thc-{{v}}-proof-id-awardletter" type="file" />
+            {% endset -%}
+
+            {% set OtherLetterHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-residency-otherletter">
+                Upload  letter
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-residency-otherletter" name="thc-{{v}}-proof-id-otherletter" type="file" />
+            {% endset -%}
+
+            {% set PaySlipsHtml %}
+              <label class="govuk-label lbh-label" htmlFor="thc-{{v}}-proof-residency-payslips">
+                Upload pay slips
+              </label>
+              <input class="govuk-file-upload lbh-file-upload" id="thc-{{v}}-proof-residency-payslips" name="thc-{{v}}-proof-id-payslips" type="file" />
+            {% endset -%}
+
+            {{ govukCheckboxes({
+              name: "thc-"+v+"-proof-residency",
+              classes: "govuk-checkboxes--small lbh-checkboxes",
+              fieldset: {
+                legend: {
+                  text: "Proof of residency"
+                }
+              },
+              hint: {
+                classes: "lbh-hint",
+                text: "The tenant will need to provide 3 proofs of residency with current address"
+              },
+              items: [
+                {
+                  value: "Utility bill",
+                  text: "Utility bill",
+                  hint: {
+                    classes: "lbh-hint",
+                    text: "For example, gas, electricity, water. Mobile phone bills are excluded."
+                  },
+                  conditional: {
+                    html: UtilityHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-residency", "Utility bill")
+                },
+                {
+                  value: "Proof of savings",
+                  text: "Proof of savings",
+                  hint: {
+                    classes: "lbh-hint",
+                    text: "For example, bank or building society statements."
+                  },
+                  conditional: {
+                    html: SavingsHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-residency", "Proof of savings")
+                },
+                {
+                  value: "Award letter",
+                  text: "Award letter",
+                  hint: {
+                    classes: "lbh-hint",
+                    text: "Letter from Department of Work and Pensions, Job Centre Plus, or Pension Service."
+                  },
+                  conditional: {
+                    html: AwardLetterHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-residency", "Award letter")
+                },
+                {
+                  value: "Letter from professional body",
+                  text: "Letter from professional body",
+                  hint: {
+                    classes: "lbh-hint",
+                    text: "Letter from housing benefit, school, hospital, solicitor or social services."
+                  },
+                  conditional: {
+                    html: OtherLetterHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-residency", "Letter from professional body")
+                },
+                {
+                  value: "P60, P45, or pay slips",
+                  text: "P60, P45, or pay slips",
+                  conditional: {
+                    html: PaySlipsHtml
+                  },
+                  checked: checked("thc-"+v+"-proof-residency", "P60, P45, or pay slips")
+                }
+              ]
+            }) }}
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Save and continue
+          </button>
+
+        </form>
+
+      </div><!-- mmh-mobile-content -->
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}
