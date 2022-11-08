@@ -200,10 +200,14 @@ body {
 
   .govuk-label,
   .lbh-input,
-  .govuk-fieldset__legend {
+  .govuk-fieldset__legend,
+  .lbh-list {
     font-size: 1rem;
     font-weight: normal;
     line-height: 1.5;
+  }
+  .lbh-list > li + li {
+    margin-top: 0.25em;
   }
 
   .govuk-label,
@@ -266,6 +270,41 @@ body {
 
   .govuk-radios__conditional .lbh-textarea {
     margin-bottom: 0;
+  }
+
+
+  .mmh-card {
+    border: 1px solid #b1b4b6;
+    border-radius: 0.5rem;
+    margin-bottom: 1em;
+    padding: 0.5rem;
+    .lbh-summary-list {
+      margin-bottom: 0;
+    }
+    .govuk-summary-list__row:last-child {
+      border-bottom: none;
+    }
+    .govuk-summary-list__row {
+      padding: 0.5em 0.25em;
+    }
+  }
+  // Fixes for check answers layout
+  .mmh-checkanswers {
+    
+    .lbh-heading-h3 {
+      margin: 1em 0 0.5em 0;
+    }
+    .lbh-heading-h4 {
+      margin-top: 0;
+    }
+    .govuk-summary-list {
+      margin-bottom: 1em;
+    }
+    .mmh-card {
+      .lbh-summary-list {
+        margin-bottom: 0;
+      }
+    }
   }
 
 }
