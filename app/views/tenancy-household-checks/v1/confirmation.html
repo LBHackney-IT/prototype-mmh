@@ -1,5 +1,5 @@
 {% set serviceName = "Tenancy & Household Checks" %}
-{% set pageName = "Start page" %}
+{% set pageName = "Confirmation" %}
 {% extends "layout/hackney-mobile/v1.html" %}
 
 {% block pageTitle %}
@@ -11,16 +11,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       
-      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header-nonav.html" %}
 
       <div class="mmh-mobile-content">
+
+        <div class="govuk-panel govuk-panel--confirmation lbh-panel">
+          <h1 class="govuk-panel__title">Checks complete</h1>
+          <!--div class="govuk-panel__body">Your reference number: HDJ2123F</div-->
+        </div>
+
+        <!--h2 class="lbh-heading-h3">What next?</h2-->
         
         {% include "tenancy-household-checks/v1/includes/card-tenant.html" %}
         
-        <a href="tenants-details" role="button" draggable="false" class="govuk-button lbh-button" data-module="govuk-button">
-          Start checks
-        </a>
-
       </div><!-- mmh-mobile-content -->
 
     </div>

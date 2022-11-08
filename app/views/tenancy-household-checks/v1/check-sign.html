@@ -1,0 +1,529 @@
+{% set serviceName = "Tenancy & Household Checks" %}
+{% set pageName = "Check and sign" %}
+{% extends "layout/hackney-mobile/v1.html" %}
+
+{% block pageTitle %}
+  Home - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "tenancy-household-checks/"+v+"/includes/mobile-header.html" %}
+
+      <div class="mmh-mobile-content mmh-checkanswers">
+        
+        {% include "tenancy-household-checks/v1/includes/card-tenant.html" %}
+
+        <h2 class="lbh-heading-h3">Tenant details</h2>
+
+        <h3 class="lbh-heading-h4">Tenant 1</h3>        
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Tenant name</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-tenantsdetails-tenant1-name"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Date of birth</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-tenantsdetails-tenant1-dob-day"] }}
+              {{ data["thc-"+v+"-tenantsdetails-tenant1-dob-month"] }}
+              {{ data["thc-"+v+"-tenantsdetails-tenant1-dob-year"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Telephone</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-tenantsdetails-tenant1-tel"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Email</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-tenantsdetails-tenant1-email"] }}
+            </dd>
+          </div>
+        </dl>
+
+        <h3 class="lbh-heading-h4">Other household members</h3>
+        <p>None</p>
+
+        <h3 class="lbh-heading-h4">Next of kin</h3>
+        <p>No details supplied</p>
+
+        <h2 class="lbh-heading-h3">Visit details</h2>    
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Was the visit completed inside the property?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-visitdetails-visitcompleted"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Is the property occupied?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-visitdetails-propertyoccupied"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Is the person in occupation the tenant?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-visitdetails-tenantinoccupation"] }}
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="lbh-heading-h3">Proof of ID and residency</h2>    
+        <h3 class="lbh-heading-h4">Proof of ID documents</h3>
+        <dl class="govuk-summary-list lbh-summary-list">
+          {% for item in data["thc-"+v+"-proof-id"] %}
+            {% if item == "Passport" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Passport</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-id-passport"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-id"] %}
+            {% if item == "Birth Certificate" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Birth Certificate</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-id-birthcertificate"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-id"] %}
+            {% if item == "Immigration documents from Home Office confirming status" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Immigration documents from Home Office confirming status</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-id-immigrationdocument"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-id"] %}
+            {% if item == "Full driving licence at current address" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Full driving licence at current address</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-id-drivinglicence"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-id"] %}
+            {% if item == "Photo provisional driving licence at current address" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Photo provisional driving licence at current address</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-id"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-id"] %}
+            {% if item == "Residence permit (EU nationals)" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Residence permit (EU nationals)</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-id"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-id"] %}
+            {% if item == "Freedom pass" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Freedom pass</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-id"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </dl>
+ 
+        <h3 class="lbh-heading-h4">Proof of residency documents</h3>
+        <dl class="govuk-summary-list lbh-summary-list">
+          {% for item in data["thc-"+v+"-proof-residency"] %}
+            {% if item == "Utility bill" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Utility bill</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-residency-utilitybill"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-residency"] %}
+            {% if item == "Proof of savings" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Proof of savings</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-residency-savings"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-residency"] %}
+            {% if item == "Award letter" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Award letter</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-residency-awardletter"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-residency"] %}
+            {% if item == "Letter from professional body" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Letter from professional body</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-residency-otherletter"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in data["thc-"+v+"-proof-residency"] %}
+            {% if item == "P60, P45, or pay slips" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">P60, P45, or pay slips</dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data["thc-"+v+"-proof-residency-payslips"] }}
+                </dd>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </dl>
+
+        <h2 class="lbh-heading-h3">Rent and housing benefit</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Is the tenant claiming housing benefit?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-housingbenefit-claiming"] }}
+              {% if data["thc-"+v+"-housingbenefit-claiming"] == "Yes" %}
+                <br>{{ data["thc-"+v+"-housingbenefit-claiming-detail"] }}
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Is the tenant in rent arrears?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-housingbenefit-arrears"] }}
+              {% if data["thc-"+v+"-housingbenefit-arrears"] == "Yes" %}
+                <br>{{ data["thc-"+v+"-housingbenefit-arrears-detail"] }}
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Does the tenant wish to be referred to a Financial Inclusion Officer?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-housingbenefit-referred"] }}
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="lbh-heading-h3">Repairs</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Are there any repair queries?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-repairs-queries"] }}
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="lbh-heading-h3">The property</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Where is the property located</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-property-location"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Does the property have a garden?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-property-garden"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Does the property have any laminate flooring?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-property-flooring"] }}
+              {% if data["thc-"+v+"-property-flooring"] == "Yes" %}
+                <br>{{ data["thc-"+v+"-property-flooring-detail"] }}
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Evidence of structural improvements differing from when originally let?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-property-evidence"] }}
+            </dd>
+          </div>
+          {% if data["thc-"+v+"-property-evidence"] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Was authorisation sought and approved?</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-property-evidence-detail"] }}
+              </dd>
+            </div>
+          {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Any signs of damage caused to the proprty?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-property-damage"] }}
+              {% if data["thc-"+v+"-property-damage"] == "Yes" %}
+                <br>{{ data["thc-"+v+"-property-damage-detail"] }}
+              {% endif %}
+            </dd>
+          </div>
+          {% if data["thc-"+v+"-property-comments"] != "" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Additional comments</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-property-comments"] }}
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+
+        <h2 class="lbh-heading-h3">Anti-social behaviour</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Does the tenant know what constitues an ASB?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-asb-constitutes"] }}
+            </dd>
+          </div>
+          {% if data["thc-"+v+"-asb-constitutes"] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Have you discussed what constitutes an ASB with the tenant?</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-asb-discussed"] }}
+              </dd>
+            </div>
+          {% endif %}
+          {% if data["thc-"+v+"-asb-followup"] != "" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Any follow up action required?</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-asb-followup"] }}
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+
+        <h2 class="lbh-heading-h3">Fire hazards</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Has the tenant had metal gates erected across the front entrance doors?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-firehazards-metalgates"] }}
+            </dd>
+          </div>
+          {% if data["thc-"+v+"-firehazards-metalgates"] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Has the tenant left combustible items behind these gates?</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-firehazards-metalgates-items"] }}
+              </dd>
+            </div>
+          {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Has the tenant placed door mats and/or potted plants in communal areas?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-firehazards-communal-plants"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Has the tenant left combustible items in communal areas?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-firehazards-communal-combustible"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Is the tenant storing materials that can catch fire in their home?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-firehazards-storingmaterials"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Does the property have a secondary fire exit that is accessible and easy to use?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-firehazards-fireexit"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Is there a hard wired smoke alarm that works when tested?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-firehazards-smokealarm"] }}
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="lbh-heading-h3">Pets and animals</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Are there any pets or animals in the property?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-petsanimals"] }}
+            </dd>
+          </div>
+          {% if data["thc-"+v+"-petsanimals"] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Has permission been granted to keep the pets/animals?</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-petsanimals-permission"] }}
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+
+        <h2 class="lbh-heading-h3">Disability</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Does the tenant have a disability?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-disability"] }}
+            </dd>
+          </div>
+          {% if data["thc-"+v+"-disability"] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Is the tenant in receipt of Personal Independent Payment?</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-disability-pip"] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">How does the tenant describe their disability?</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-disability-description"] }}
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+
+        <h2 class="lbh-heading-h3">Referrals and safeguarding</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Have you made a referral to any other agencies or services?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-referrals"] }}
+            </dd>
+          </div>
+          {% if data["thc-"+v+"-referrals"] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Which referrals did you make?</dt>
+              <dd class="govuk-summary-list__value">                
+                {% if data["thc-"+v+"-referrals-which"]|is_string %}
+                  <p>
+                    {{ data["thc-"+v+"-referrals-which"] }}
+                  </p>
+                {% else %}
+                  <ul class="lbh-list lbh-list--bullet">
+                    {% for item in data["thc-"+v+"-referrals-which"] %}
+                      <li>{{ item }}{% if item == "Other" %}
+                        - {{ data["thc-"+v+"-referrals-other"] }}
+                      {% endif %}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </dd>
+            </div>
+          {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Are there apparent child or adult safeguarding concerns?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-referrals-concerns"] }}
+              {% if data["thc-"+v+"-referrals-concerns"] == "Yes" %}
+                <br>{{ data["thc-"+v+"-referrals-concerns-details"] }}
+              {% endif %}
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="lbh-heading-h3">Tenant enquiries</h2>  
+        <dl class="govuk-summary-list lbh-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Any questions from tenant regarding their home?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-enquiries-home"] }}
+              {% if data["thc-"+v+"-enquiries-home"] == "Yes" %}
+                <br>{{ data["thc-"+v+"-enquiries-home-details"] }}
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Any questions from tenant regarding estate and facilities?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-enquiries-facilities"] }}
+              {% if data["thc-"+v+"-enquiries-facilities"] == "Yes" %}
+                <br>{{ data["thc-"+v+"-enquiries-facilities-details"] }}
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Have you discussed the alterations and improvements procedure with the tenant?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-enquiries-alterations"] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Have you discussed the Tenants and Residents Association?</dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["thc-"+v+"-enquiries-tra"] }}
+            </dd>
+          </div>
+          {% if data["thc-"+v+"-enquiries-tra"] == "Yes" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Would they like to be part of one?</dt>
+              <dd class="govuk-summary-list__value">
+                {{ data["thc-"+v+"-enquiries-tra-bepart"] }}
+              </dd>
+            </div>
+          {% endif %}
+        </dl>
+    
+        <form action="" method="post">
+          
+          <div class="govuk-form-group lbh-form-group">
+
+            {{ govukTextarea({
+              id: "thc-"+v+"-signature",
+              name: "thc-"+v+"-signature",
+              classes: "lbh-textarea",
+              rows: 3,
+              label: {
+                text: "Tenant signature"
+              }
+            }) }}
+
+          </div>
+          
+          <button class="govuk-button lbh-button" data-module="govuk-button">
+            Submit checks
+          </button>
+
+        </form>
+
+      </div><!-- mmh-mobile-content -->
+
+    </div>
+  </div>
+
+  
+
+{% endblock %}
