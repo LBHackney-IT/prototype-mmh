@@ -1,0 +1,172 @@
+{% set serviceName = "Cautionary Contacts" %}
+{% extends "layout/hackney.html" %}
+
+{% block pageTitle %}
+  Property details - Cautionary contacts - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukBackLink({
+        text: "Search results",
+        href: "#"
+      }) }}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        45 Oriel Road, Hackney, London, N16 5TT
+      </h1>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+
+      <img src="/public/images/45-Oriel-Rd-Google-Maps.png" alt="Map" class="lbh-map-small">
+
+      <aside class="lbh-aside">
+        <h2 class="lbh-heading lbh-heading-h4">
+          Cautionary alerts
+        </h2>
+        <p class="lbh-body">None</p>
+        <p class="lbh-body"><a href="cautionary-add">Add cautionary alert</a></p>
+      </aside>
+
+      <aside class="lbh-aside">
+        {{ govukSummaryList({
+          classes: "lbh-summary-list lbh-summary-list--noborder",
+          rows: [
+            {
+              key: {
+                text: "Type:"
+              },
+              value: {
+                text: "Dwelling"
+              }
+            },
+            {
+              key: {
+                text: "UPRN:"
+              },
+              value: {
+                text: "93641236658"
+              }
+            },
+            {
+              key: {
+                text: "Property ref:"
+              },
+              value: {
+                text: "AB654894153"
+              }
+            }
+          ]
+        }) }}
+      </aside>
+
+      <aside class="lbh-aside">
+        <h2 class="lbh-heading lbh-heading-h4">
+          Tenure
+        </h2>
+        {{ govukSummaryList({
+          classes: "lbh-summary-list lbh-summary-list--noborder",
+          rows: [
+            {
+              key: {
+                text: "Type:"
+              },
+              value: {
+                text: "Secure"
+              }
+            },
+            {
+              key: {
+                text: "Status:"
+              },
+              value: {
+                text: "Active"
+              }
+            },
+            {
+              key: {
+                text: "Start date:"
+              },
+              value: {
+                text: "11/04/2004"
+              }
+            },
+            {
+              key: {
+                text: "End date:"
+              },
+              value: {
+                text: "N/A"
+              }
+            },
+            {
+              key: {
+                text: "Payment ref:"
+              },
+              value: {
+                text: "xxxxxxxxxxxx"
+              }
+            }
+          ]
+        }) }}
+        <button class="lbh-button lbh-button--secondary">
+          View tenure
+        </button>
+      </aside>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+
+      <button class="lbh-button govuk-!-margin-bottom-5">
+        New process
+      </button>
+      <p class="lbh-body">No processes</p>
+
+      {# Size modifiers: xl, l, m #}
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="lbh-heading lbh-heading-h2 govuk-!-margin-bottom-5">
+        Comments
+      </h2>
+
+      <button class="lbh-button govuk-!-margin-bottom-5">
+        Add comment
+      </button>
+      <p class="lbh-body">No comments</p>
+
+      <button class="lbh-button lbh-button--secondary govuk-!-margin-bottom-5">
+        Activity history
+      </button>
+
+      <!--h2 class="govuk-heading-m govuk-!-margin-top-5">
+        Repairs
+      </h2>
+
+      {{ govukSelect({
+        id: "repairs",
+        name: "repairs",
+        classes: "lbh-inline-input",
+        label: {
+          classes: "lbh-inline-label",
+          text: "Show:"
+        },
+        items: [
+          {
+            value: "Repairs in progress",
+            text: "Repairs in progress"
+          }
+        ]
+      }) }}
+      -->
+
+    </div>
+  </div>
+
+{% endblock %}

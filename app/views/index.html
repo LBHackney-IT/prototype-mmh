@@ -8,34 +8,46 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
         Manage My Home Prototypes
       </h1>
-      <!--p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+      <h2 class="govuk-heading-l">
+        Tenancy and Household Checks
+      </h2>
+      <div class="govuk-inset-text govuk-!-margin-top-0">
+        {{ govukTag({
+          classes: "govuk-tag--green govuk-!-margin-bottom-3",
+          text: "Ready for UR"
+        }) }}
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+          Tenancy and Household Checks (mobile) - Version 1
+        </h3>
+        <ul class="govuk-list lbh-list govuk-list--bullet">
+          <li><a href="/tenancy-household-checks/v1/">Start page</a></li>
+          <li><a href="/tenancy-household-checks/v1/skip">Skip to completed "Check and sign"</a></li>
+        </ul>
+      </div>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+      <h2 class="govuk-heading-l">
+        Cautionary Contacts
+      </h1>
+      <div class="govuk-inset-text govuk-!-margin-top-0">
+        {{ govukTag({
+          classes: "govuk-tag--red govuk-!-margin-bottom-3",
+          text: "WIP"
+        }) }}
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-3">
+          Version 1
+        </h3>
+        <ul class="govuk-list lbh-list govuk-list--bullet">
+          <li><a href="/cautionary-contacts/v1/">
+            Cautionary Contact Entry Form</a></li>
+        </ul>
+      </div>
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul-->
     </div>
   </div>
 

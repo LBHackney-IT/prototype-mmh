@@ -15,6 +15,7 @@
 {% endblock %}
 
 {% block header %}
+<div class="lbh-main-wrapper">
   <header class="lbh-header">
     <div class="lbh-header__main">
       <div class="lbh-container lbh-header__wrapper ">
@@ -48,18 +49,39 @@
       </div>
     </div>
   </header>
-  <div class="govuk-phase-banner lbh-phase-banner lbh-container">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag lbh-tag lbh-tag--prototype">
-        Prototype
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new work in progress design - your 
-        <a href="#feedback" title="Tell us what you think"
-          >feedback</a
-        > will help us to improve it.
-      </span>
-    </p>
-  </div>
+    <div class="govuk-phase-banner lbh-phase-banner lbh-container">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag lbh-tag lbh-tag--prototype">
+          Prototype
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new work in progress design - your 
+          <a href="#feedback" title="Tell us what you think"
+            >feedback</a
+          > will help us to improve it.
+        </span>
+      </p>
+    </div>
 {% endblock %}
-{% block footer %}{% endblock %}
+
+{% block footer %}
+  </div> <!-- end lbh-main-wrapper -->
+  <footer class="mtfh-footer">
+    <div class="mtfh-footer__section mtfh-footer__section--primary">
+      <ul class="mtfh-footer__menu">
+        <li class="mtfh-footer__menu-item">
+          <a class="lbh-link" href="/prototype-admin/clear-data" target="_blank" rel="noopener">Clear data</a>
+        </li>
+      </ul>
+    </div>
+    <div class="mtfh-footer__section"></div>
+  </footer>
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}

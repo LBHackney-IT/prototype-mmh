@@ -26,9 +26,44 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
+html, body {
+  height: 100%;
+}
 body {
   font-family: $govuk-font-family;
 }
+
+.lbh-main-wrapper {
+  padding: 0 0 100px;
+  margin-bottom: -125px;
+  min-height: 100%;
+}
+
+// FOOTER
+  .mtfh-footer__section {
+    min-height: 50px;
+    margin: 0;
+    color: #fff;
+    line-height: 50px;
+    background-color: #0b0c0c;
+  }
+
+  .mtfh-footer__section--primary {
+    background-color: #00664f;
+  }
+  .lbh ul.mtfh-footer__menu {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .mtfh-footer__menu-item {
+    display: inline-block;
+    margin: 0 50px 0 0;
+  }
+  .mtfh-footer__menu-item .lbh-link:link,
+  .mtfh-footer__menu-item .lbh-link:visited {
+    color: #fff;
+  }
+
 
 .govuk-phase-banner {
   margin-top: 0;
@@ -138,6 +173,10 @@ body {
     }
   }
 
+}
+.govuk-width-container,
+.govuk-phase-banner__content {
+  margin-top: 0;
 }
 
 .lbh-mobile {
@@ -356,3 +395,74 @@ body {
       font-size: 1rem;
     }
   }
+
+.lbh-aside {
+  border-top: 1px solid #b1b4b6;
+  margin-top: 0.5rem;
+  padding: 1rem 0 0;
+
+  .lbh-heading,
+  .lbh-body,
+  .lbh-summary-list {
+    margin-bottom: 0.5rem;
+  }
+
+  .lbh-button {
+    width: 100%
+  }
+
+  .lbh-body {
+    font-size: 1rem;
+  }
+  .lbh-summary-list {
+    font-size: 0.9rem;
+    .govuk-summary-list__key,
+    .govuk-summary-list__value {
+      padding-top: 0;
+      width: 50%;
+    }
+    
+    .govuk-summary-list__key {
+      font-weight: 500;
+    }
+    
+    .govuk-summary-list__value {
+      color: #757575;
+    }
+  }
+}
+
+.lbh-map-small {
+  max-width: 280px;
+  width: 100%;
+}
+
+.lbh-summary-list--noborder {
+  .govuk-summary-list__row,
+  .govuk-summary-list__key,
+  .govuk-summary-list__value {
+    border-bottom: none;
+  }
+}
+
+.lbh-button {
+  border: 2px solid transparent;
+  box-shadow: 0 2px 0 #002d18;
+  color: #fff;
+  line-height: 1;
+  margin-top: 0;
+  width: auto;
+
+  &--secondary {
+    border: 1px solid #00664f;
+    color: #00664f;
+  }
+}
+
+.lbh-inline-label,
+.lbh-inline-input {
+  display: inline;
+}
+.lbh-inline-input {
+  margin-top: 0;
+}
