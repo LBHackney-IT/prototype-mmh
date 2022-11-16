@@ -17,6 +17,11 @@
       
       <section class="lbh-page-announcement">
         <h3 class="lbh-page-announcement__title">Cautionary contact added</h3>
+        {% if data["cc-"+v+"-letter"] == "Yes" %}
+          <div class="lbh-page-announcement__content">
+            A letter has been saved and sent to the tenant.
+          </div>
+        {% endif %}
       </section>
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
