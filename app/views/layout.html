@@ -37,6 +37,12 @@
 {% endblock %}
 
 {% block pageTitle %}
+  {% if pageName %}
+    {{ pageName }} - 
+  {% endif %}
+  {% if serviceName %}
+    {{ serviceName }} - 
+  {% endif %}
   GOV.UK Prototype Kit
 {% endblock %}
 

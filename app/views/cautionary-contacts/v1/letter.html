@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My fabulous blog</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+      .lbh-letter-wrapper {
+        background: #F8F9FA;
+        min-height: 100vh;
+        padding: 3em;
+        width: 100vw;
+      }
+      .lbh-letter-container {
+        background: white;
+        box-shadow: 0 1px 3px 1px rgb(60 64 67 / 15%);
+        margin: 0 auto;
+        padding: 76px 96px 96px;
+        width: 624px;
+        min-height: 1056px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.2;
+      }
+    </style>
+  </head>
+  <div class="lbh-letter-wrapper">
+    <div class="lbh-letter-container">
+      
+      <p style="text-align: right;">
+        Hackney Service Centre <br>
+        1 Hillman Street<br>
+        Hackney<br>
+        E8 1DY
+      <p style="text-align: right;">
+        Tel: 0208 3561911<br>
+        Fax: 0208 356 1900        
+      </p>
+      <p style="text-align: right;">Date: 16 November 2022</p>
+      <p>
+        45 Oriel Road<br>
+        Hackney<br>
+        London<br>
+        N16 5TT
+      </p>
+
+      <p style="margin-top: 2em;">Dear {{ data["cc-"+v+"-tenant"] }}</p>
+      <h1 style="text-align: center; font-weight: bold; font-size: 1.2em; margin-bottom: 0;">Unacceptable Behaviour</h1>
+
+      <p style="margin-top: 2em;">Hackney Homes Ltd and its partners are committed to providing excellent housing services in a safe environment free from fear of assault or abuse.</p>
+      <p>Hackney Homes Ltd and its partners believe that all staff and members of the public have a responsibility to treat each other with dignity and respect, and to behave in an appropriate and acceptable manner.</p>
+
+      <h2 style="font-weight: bold; font-size: 1.2em; margin-bottom: 0.2em;">Incident</h2>
+      <p style="margin-top: 0;">We have taken note of an incident which involved the following:</p>
+
+      <p style="margin-left: 2em;">{{ data["cc-"+v+"-description"] }}</p>
+
+      <p>This it not acceptable behaviour and is in contravention of Hackney Homes Staff Protection Harassment Policy</p>
+      
+      <h2 style="font-weight: bold; font-size: 1.2em; margin-bottom: 0.2em;">Cautionary Contact List</h2>
+      <p style="margin-top: 0;">We have concluded that this behaviour poses a risk to a safe working environment and we have decided to include your name on our Cautionary Contacts list. This listing will be reviewed every six months.</p>
+      
+      <h2 style="font-weight: bold; font-size: 1.2em; margin-bottom: 0.2em;">Legislation</h2>
+      <p style="margin-top: 0;">The Health and Safety at Work Act 1974 (and regulations) tell us how to ensure that workplaces are safe and secure. The Data Protection Act 1998 (and regulations) tells us how to manage information - including keeping it secure.</p>
+      
+      <h2 style="font-weight: bold; font-size: 1.2em; margin-bottom: 0.2em;">Complaints</h2>
+      <p style="margin-top: 0;">We are committed to encouraging and responding to customer feedback. If you feel that our decision is unreasonable, you can complain about it formally - we will respond promptly and fully, as described over the page.</p>
+      
+      <p style="margin-top: 2em;">Yours faithfully,</p>
+      <p>Housing Management Team</p>
+
+    </div>
+  </div>
+</html>

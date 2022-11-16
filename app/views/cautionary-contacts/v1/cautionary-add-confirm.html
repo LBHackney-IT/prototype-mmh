@@ -1,0 +1,143 @@
+{% set serviceName = "Manage My Home" %}
+{% set pageName = "Add cautionary contact" %}
+{% extends "layout/hackney.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-quarter">
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "cautionary-add"
+      }) }}
+
+      <h1 class="lbh-heading-h1 govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+        Check and confirm cautionary contact
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Assure reference"
+            },
+            value: {
+              text: data["cc-"+v+"-ref"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "cautionary-add",
+                  text: "Change",
+                  visuallyHiddenText: "Assure reference"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of incident"
+            },
+            value: {
+              text: data["cc-"+v+"-date-day"]+" "+data["cc-"+v+"-date-month"]+" "+data["cc-"+v+"-date-year"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "cautionary-add",
+                  text: "Change",
+                  visuallyHiddenText: "date of incident"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Type of caution"
+            },
+            value: {
+              text: data["cc-"+v+"-type"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "cautionary-add",
+                  text: "Change",
+                  visuallyHiddenText: "type of caution"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Tenant"
+            },
+            value: {
+              text: data["cc-"+v+"-tenant"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "cautionary-add",
+                  text: "Change",
+                  visuallyHiddenText: "tenant"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Description of incident"
+            },
+            value: {
+              text: data["cc-"+v+"-description"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "cautionary-add",
+                  text: "Change",
+                  visuallyHiddenText: "description of incident"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Does a letter need to be sent?"
+            },
+            value: {
+              html: data["cc-"+v+"-letter"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "cautionary-add",
+                  text: "Change",
+                  visuallyHiddenText: "if a letter needs to be sent"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% if data["cc-"+v+"-letter"] == "Yes" %} 
+        <p class="govuk-!-margin-bottom-7"><a href="letter" target="_blank">Preview letter to be sent (opens in new tab or window)</a></p>
+        <a href="index-ccadded" class="govuk-button lbh-button" data-module="govuk-button">
+          Save and send letter
+        </a>
+      {% else %}
+        <a href="index-ccadded" class="govuk-button lbh-button" data-module="govuk-button">
+          Save cautionary contact
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+
+{% endblock %}

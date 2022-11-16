@@ -21,6 +21,21 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
   .govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
     padding-top: 50px;
   }
+  
+  .lbh-form-group {
+    .govuk-fieldset__legend {
+      font-size: 1.1875em;
+      font-weight: normal;
+    }
+    .govuk-label.govuk-date-input__label {
+      font-size: 1rem;
+      font-weight: normal;
+      margin: 0;
+    }
+    .lbh-radios {
+      margin-top: 0.5em;
+    }
+  }
 }
 
 
@@ -465,4 +480,20 @@ body {
 }
 .lbh-inline-input {
   margin-top: 0;
+}
+
+// Fix to GOV Panel component
+.lbh .govuk-panel__title {
+  color: white;
+}
+
+.icon-bell {
+  float: left;
+  height: 44px;
+  margin: -5px 10px 0 0;
+}
+
+.icon-bell--small {
+  height: 26px;
+  margin: -2px 4px 0 0;
 }

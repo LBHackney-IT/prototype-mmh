@@ -1,24 +1,219 @@
-{% set serviceName = "Cautionary Contacts" %}
-{% set pageName = "Cautionary Contacts Entry Form" %}
+{% set serviceName = "Manage My Home" %}
+{% set pageName = "Add cautionary contact" %}
 {% extends "layout/hackney.html" %}
-
-{% block pageTitle %}
-  Home - GOV.UK Prototype Kit
-{% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      {{ govukBackLink({
-        text: " 45 Oriel Road, N16 5TT",
-        href: "index"
-      }) }}
+        {{ govukBackLink({
+          text: " 45 Oriel Road, N16 5TT",
+          href: "index"
+        }) }}
 
-      <h1 class="lbh-heading-h1 govuk-!-margin-top-3 govuk-!-margin-bottom-3">
-        Add cautionary contact
-      </h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+          Add cautionary contact
+        </h1>    
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+      <form action="" method="post">
+        
+        <div class="govuk-form-group lbh-form-group">
+
+          {{ govukInput({
+            id: "cc-"+v+"-ref",
+            name: "cc-"+v+"-ref",
+            classes: "lbh-input govuk-input--width-10",
+            label: {
+              text: "Assure Reference"
+            },
+            value: data["cc-"+v+"-ref"]
+          }) }}
+          
+
+          {{ govukDateInput({
+            id: "cc-"+v+"-date",
+            namePrefix: "cc-"+v+"-date",
+            classes: "lbh-date-input",
+            fieldset: {
+              legend: {
+                classes: "",
+                text: "Date of incident"
+              }
+            },
+            items: [
+              {
+                name: "day",
+                label: "Day",
+                value: data["cc-"+v+"-date-day"],
+                classes: "govuk-input--width-2"
+              },
+              {
+                name: "month",
+                label: "Month",
+                value: data["cc-"+v+"-date-month"],
+                classes: "govuk-input--width-2"
+              },
+              {
+                name: "year",
+                label: "Year",
+                value: data["cc-"+v+"-date-year"],
+                classes: "govuk-input--width-4"
+              }
+            ]
+          }) }}
+
+          {% set codeHtml %}
+            {{ govukInput({
+              id: "thc-"+v+"-type-other",
+              name: "thc-"+v+"-type-other",
+              label: {
+                text: "Enter type of caution"
+              },
+              value: data["thc-"+v+"-type-other"]
+            }) }}
+          {% endset -%}
+
+          {{ govukSelect({
+            id: "cc-"+v+"-type",
+            name: "cc-"+v+"-type",
+            classes: "lbh-select",
+            label: {
+              text: "Type of caution"
+            },
+            items: [
+              {
+                value: "",
+                text: "Select type of caution",
+                selected: checked("cc-"+v+"-type", "")
+              },
+              {
+                value: "Beware of aggressive pets",
+                text: "Beware of aggressive pets",
+                selected: checked("cc-"+v+"-type", "Beware of aggressive pets")
+              },
+              {
+                value: "Do not visit - Seek advice",
+                text: "Do not visit - Seek advice",
+                selected: checked("cc-"+v+"-type", "Do not visit - Seek advice")
+              },
+              {
+                value: "Do not visit alone",
+                text: "Do not visit alone",
+                selected: checked("cc-"+v+"-type", "Do not visit alone")
+              },
+              {
+                value: "No female visits",
+                text: "No female visits",
+                selected: checked("cc-"+v+"-type", "No female visits")
+              },
+              {
+                value: "Safeguarding",
+                text: "Safeguarding",
+                selected: checked("cc-"+v+"-type", "Safeguarding")
+              },
+              {
+                value: "Verbal abuse",
+                text: "Verbal abuse",
+                selected: checked("cc-"+v+"-type", "Verbal abuse")
+              },
+              {
+                value: "Other",
+                text: "Other",
+                selected: checked("cc-"+v+"-type", "Other"),
+                conditional: {
+                  html: codeHtml
+                }
+              }
+            ]
+          }) }}
+
+          {{ govukSelect({
+            id: "cc-"+v+"-tenant",
+            name: "cc-"+v+"-tenant",
+            classes: "lbh-select",
+            label: {
+              text: "Tenant"
+            },
+            items: [
+              {
+                value: "",
+                text: "Select tenant",
+                selected: checked("cc-"+v+"-tenant", "")
+              },
+              {
+                value: "Joan Fisher",
+                text: "Joan Fisher",
+                selected: checked("cc-"+v+"-tenant", "Joan Fisher")
+              },
+              {
+                value: "Jonathan Fisher",
+                text: "Jonathan Fisher",
+                selected: checked("cc-"+v+"-tenant", "Jonathan Fisher")
+              }
+            ]
+          }) }}
+
+          {{ govukTextarea({
+            id: "cc-"+v+"-description",
+            name: "cc-"+v+"-description",
+            classes: "lbh-textarea",
+            label: {
+              text: "Description of incident"
+            },
+            hint: {
+              classes: "lbh-hint",
+              text: "If you send a letter, this description will be used in the letter template"
+            },
+            value: data["cc-"+v+"-description"]
+          }) }}
+
+          {% set letterHtml %}
+            {{ govukTextarea({
+              id: "cc-"+v+"-letter-contents",
+              name: "cc-"+v+"-letter-contents",
+              classes: "lbh-textarea govuk-!-width-two-thirds",
+              label: {
+                text: "Content for letter template"
+              },
+              value: data["cc-"+v+"-letter-contents"]
+            }) }}
+          {% endset -%}
+
+          {{ govukRadios({
+            idPrefix: "cc-"+v+"-letter",
+            name: "cc-"+v+"-letter",
+            classes: "lbh-radios",
+            fieldset: {
+              legend: {
+                text: "Does a letter need to be sent?"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: checked("cc-"+v+"-letter", "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: checked("cc-"+v+"-letter", "No")
+              }
+            ]
+          }) }}
+
+        </div>
+          
+        <button class="govuk-button lbh-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      
+      </form>
 
     </div>
   </div>
