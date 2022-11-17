@@ -1,0 +1,228 @@
+{% set serviceName = "Manage My Home" %}
+{% extends "layout/cautionary-alerts/v2.html" %}
+
+{% block pageTitle %}
+  Property details - Cautionary alerts - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukBackLink({
+        text: "Search",
+        href: "search"
+      }) }}
+      
+      {% if data["cc-"+v+"-added"] %}
+        <section class="lbh-page-announcement">
+          <h3 class="lbh-page-announcement__title">Cautionary alert added</h3>
+        </section>
+      {% endif %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        {% if data["cc-"+v+"-added"] %}
+          <img src="/public/images/bell.svg" alt="" class="icon-bell">
+        {% endif %}
+        Mrs Joan Fisher
+      </h1>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+
+      <img src="https://via.placeholder.com/280x180.png" alt="" class="lbh-map-small">
+
+      <aside class="lbh-aside">
+        {% if data["cc-"+v+"-added"] %}
+          <h2 class="lbh-heading lbh-heading-h4">
+            <img src="/public/images/bell.svg" alt="" class="icon-bell icon-bell--small">
+            Cautionary alerts
+          </h2>
+          <p class="lbh-body" style="line-height: 1.3; margin-top: 15px;">
+            <strong>{{ data["cc-"+v+"-tenant"] }}</strong><br>
+            {{ data["cc-"+v+"-type"] }}
+          </p>
+        {% else %}
+          <h2 class="lbh-heading lbh-heading-h4">
+            Cautionary alerts
+          </h2>
+          <p class="lbh-body">
+            None
+          </p>
+        {% endif %}
+        <p class="lbh-body"><a href="cautionary-add">Add cautionary alert</a></p>
+      </aside>
+
+      <aside class="lbh-aside">
+        {{ govukSummaryList({
+          classes: "lbh-summary-list lbh-summary-list--noborder",
+          rows: [
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "25/09/1977"
+              }
+            },
+            {
+              key: {
+                text: "Correspondence address 1"
+              },
+              value: {
+                html: "Studio 2<br>Shah shoals<br>Leonardton<br>W98 5PL"
+              }
+            }
+          ]
+        }) }}
+      </aside>
+
+      <aside class="lbh-aside">
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-3">
+          45 Oriel Road, Hackney, London, N16 5TT
+        </h2>
+        <form action="property" method="post">
+          <button class="lbh-button lbh-button--secondary govuk-!-margin-bottom-5">
+            View property
+          </button>
+        </form>
+        
+        {{ govukSummaryList({
+          classes: "lbh-summary-list lbh-summary-list--noborder",
+          rows: [
+            {
+              key: {
+                text: "Payment ref"
+              },
+              value: {
+                text: "228008441"
+              }
+            },
+            {
+              key: {
+                text: "UPRN"
+              },
+              value: {
+                text: "93641236658"
+              }
+            },
+            {
+              key: {
+                text: "Property ref"
+              },
+              value: {
+                text: "AB654894153"
+              }
+            }
+          ]
+        }) }}
+      </aside>
+
+      <aside class="lbh-aside">
+        <!--h2 class="lbh-heading lbh-heading-h4">
+          Tenure
+        </h2-->
+        <form action="tenure" method="post">
+          <button class="lbh-button lbh-button--secondary govuk-!-margin-bottom-5">
+            View tenure
+          </button>
+        </form>
+        {{ govukSummaryList({
+          classes: "lbh-summary-list lbh-summary-list--noborder",
+          rows: [
+            {
+              key: {
+                text: "Tenure type"
+              },
+              value: {
+                text: "Leasehold (RTB)"
+              }
+            },
+            {
+              key: {
+                text: "Tenure active"
+              },
+              value: {
+                text: "Yes"
+              }
+            },
+            {
+              key: {
+                text: "Tenure start date"
+              },
+              value: {
+                text: "11/04/2004"
+              }
+            },
+            {
+              key: {
+                text: "Tenure end date"
+              },
+              value: {
+                text: "N/A"
+              }
+            }
+          ]
+        }) }}
+      </aside>
+
+      <aside class="lbh-aside">
+        <button class="lbh-button govuk-!-margin-bottom-5 action-disabled">
+          Edit person
+        </button>
+      </aside>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+
+      <button class="lbh-button govuk-!-margin-bottom-5 action-disabled">
+        New process
+      </button>
+      <p class="lbh-body">No processes</p>
+
+      {# Size modifiers: xl, l, m #}
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="lbh-heading lbh-heading-h2 govuk-!-margin-bottom-5">
+        Comments
+      </h2>
+
+      <button class="lbh-button govuk-!-margin-bottom-5 action-disabled">
+        Add comment
+      </button>
+      <p class="lbh-body">No comments</p>
+
+      <button class="lbh-button lbh-button--secondary govuk-!-margin-bottom-5 action-disabled">
+        Activity history
+      </button>
+
+      <!--h2 class="govuk-heading-m govuk-!-margin-top-5">
+        Repairs
+      </h2>
+
+      {{ govukSelect({
+        id: "repairs",
+        name: "repairs",
+        classes: "lbh-inline-input",
+        label: {
+          classes: "lbh-inline-label",
+          text: "Show"
+        },
+        items: [
+          {
+            value: "Repairs in progress",
+            text: "Repairs in progress"
+          }
+        ]
+      }) }}
+      -->
+
+    </div>
+  </div>
+
+{% endblock %}

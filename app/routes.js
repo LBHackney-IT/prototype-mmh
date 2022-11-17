@@ -6,7 +6,8 @@ const router = express.Router()
 // Tenancy & Household Checks (Tenancy Audit)
   require('./routes/tenancy-household-checks/v1.js')(router);
 
-// Cautionary Contacts
-  require('./routes/cautionary-contacts/v1.js')(router);
+// Cautionary Alerts
+  require('./routes/cautionary-alerts/v2.js')(router);
+  require('./routes/cautionary-alerts/v1.js')(router);
 
 module.exports = router

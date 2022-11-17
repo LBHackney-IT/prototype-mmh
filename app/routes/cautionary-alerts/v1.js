@@ -1,7 +1,7 @@
 module.exports = function (router) {
 
   var v = "v1";
-  var path = "/cautionary-contacts/"+v+"/";
+  var path = "/cautionary-alerts/"+v+"/";
 
   router.post(path+'cautionary-add', function (req, res) {
     /*if (req.session.data["eligibility-"+v+"-didyouapply"] == "Yes"){

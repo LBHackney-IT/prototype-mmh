@@ -17,6 +17,13 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 @import url("https://unpkg.com/lbh-frontend@3.2.0/dist/lbh-frontend-3.2.0.min.css");
 
 
+.lbh-button:hover {
+  cursor: pointer;
+}
+.action-disabled:hover {
+  cursor: not-allowed;
+}
+
 @media (min-width: 40.0625em){
   .govuk-main-wrapper--auto-spacing:first-child, .govuk-main-wrapper--l {
     padding-top: 50px;
