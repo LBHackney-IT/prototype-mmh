@@ -1,0 +1,62 @@
+{% set serviceName = "Manage My Home" %}
+{% extends "layout/cautionary-alerts/v2.html" %}
+
+{% block pageTitle %}
+  Property details - Cautionary alerts - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+  
+      <form action="" method="post">
+        
+        <div class="govuk-form-group lbh-form-group">
+
+          {{ govukInput({
+            id: "cc-"+v+"-search",
+            name: "cc-"+v+"-search",
+            classes: "govuk-input--width-20",
+            label: {
+              text: "Search",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            value: data["cc-"+v+"-search"]
+          }) }}
+
+          {{ govukRadios({
+            idPrefix: "cc-"+v+"-searchtype",
+            name: "cc-"+v+"-searchtype",
+            classes: "lbh-radios",
+            items: [
+            {
+              value: "Property",
+              text: "Property",
+              checked: true
+            },
+            {
+              value: "Person",
+              text: "Person",
+              checked: checked("cc-"+v+"-searchtype", "Person")
+            },
+            {
+              value: "Tenure",
+              text: "Tenure",
+              checked: checked("cc-"+v+"-searchtype", "Tenure")
+            }
+            ]
+          }) }}
+              
+          <button class="govuk-button lbh-button govuk-!-margin-top-5" data-module="govuk-button">
+            Search
+          </button>
+        </div>
+      
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
