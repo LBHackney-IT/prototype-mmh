@@ -39,6 +39,21 @@
             <img src="/public/images/bell.svg" alt="" class="icon-bell icon-bell--small">
             Cautionary alerts
           </h2>
+          <!--
+          {{ govukSummaryList({
+            classes: "lbh-summary-list lbh-summary-list--noborder",
+            rows: [
+              {
+                key: {
+                  text: data["cc-"+v+"-tenant"]
+                },
+                value: {
+                  text: data["cc-"+v+"-type"]
+                }
+              }
+            ]
+          }) }}
+        -->
           <p class="lbh-body" style="line-height: 1.3; margin-top: 15px;">
             <a href="person"><strong>{{ data["cc-"+v+"-tenant"] }}</strong></a><br>
             {{ data["cc-"+v+"-type"] }}
@@ -87,7 +102,7 @@
 
       <aside class="lbh-aside">
         <h2 class="lbh-heading lbh-heading-h4">
-          Tenure
+          <a href="tenure">Tenure</a>
         </h2>
         {{ govukSummaryList({
           classes: "lbh-summary-list lbh-summary-list--noborder",
@@ -134,11 +149,11 @@
             }
           ]
         }) }}
-        <form action="tenure" method="post">
+        <!--form action="tenure" method="post">
           <button class="lbh-button lbh-button--secondary">
             View tenure
           </button>
-        </form>
+        </form-->
       </aside>
 
     </div>
