@@ -14,18 +14,12 @@
         text: "Search",
         href: "search"
       }) }}
-      
-      {% if data["ccadded"] %}
-        <section class="lbh-page-announcement">
-          <h3 class="lbh-page-announcement__title">Cautionary alert added</h3>
-        </section>
-      {% endif %}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
         {% if data["cc-"+v+"-added"] %}
           <img src="/public/images/bell.svg" alt="" class="icon-bell">
         {% endif %}
-        45 Oriel Road, Hackney, London, N16 5TT
+        Mrs Joan Fisher
       </h1>
 
     </div>
@@ -34,7 +28,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
 
-      <img src="/public/images/45-Oriel-Rd-Google-Maps.png" alt="Map" class="lbh-map-small">
+      <img src="https://via.placeholder.com/280x180.png" alt="" class="lbh-map-small">
 
       <aside class="lbh-aside">
         {% if data["cc-"+v+"-added"] %}
@@ -42,23 +36,8 @@
             <img src="/public/images/bell.svg" alt="" class="icon-bell icon-bell--small">
             Cautionary alerts
           </h2>
-          <!--
-          {{ govukSummaryList({
-            classes: "lbh-summary-list lbh-summary-list--noborder",
-            rows: [
-              {
-                key: {
-                  text: data["cc-"+v+"-tenant"]
-                },
-                value: {
-                  text: data["cc-"+v+"-type"]
-                }
-              }
-            ]
-          }) }}
-        -->
           <p class="lbh-body" style="line-height: 1.3; margin-top: 15px;">
-            <a href="person"><strong>{{ data["cc-"+v+"-tenant"] }}</strong></a><br>
+            <strong>{{ data["cc-"+v+"-tenant"] }}</strong><br>
             {{ data["cc-"+v+"-type"] }}
           </p>
         {% else %}
@@ -69,6 +48,7 @@
             None
           </p>
         {% endif %}
+        <p class="lbh-body"><a href="cautionary-add">Add cautionary alert</a></p>
       </aside>
 
       <aside class="lbh-aside">
@@ -77,10 +57,44 @@
           rows: [
             {
               key: {
-                text: "Type"
+                text: "Date of birth"
               },
               value: {
-                text: "Dwelling"
+                text: "25/09/1977"
+              }
+            },
+            {
+              key: {
+                text: "Correspondence address 1"
+              },
+              value: {
+                html: "Studio 2<br>Shah shoals<br>Leonardton<br>W98 5PL"
+              }
+            }
+          ]
+        }) }}
+      </aside>
+
+      <aside class="lbh-aside">
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-3">
+          <a href="property">45 Oriel Road, Hackney, London, N16 5TT</a>
+        </h2>
+        <!--form action="property" method="post">
+          <button class="lbh-button lbh-button--secondary govuk-!-margin-bottom-5">
+            View property
+          </button>
+        </form-->
+        
+        {{ govukSummaryList({
+          classes: "lbh-summary-list lbh-summary-list--noborder",
+          rows: [
+            {
+              key: {
+                text: "Payment ref"
+              },
+              value: {
+                text: "228008441"
               }
             },
             {
@@ -107,28 +121,33 @@
         <h2 class="lbh-heading lbh-heading-h4">
           <a href="tenure">Tenure</a>
         </h2>
+        <!--form action="tenure" method="post">
+          <button class="lbh-button lbh-button--secondary govuk-!-margin-bottom-5">
+            View tenure
+          </button>
+        </form-->
         {{ govukSummaryList({
           classes: "lbh-summary-list lbh-summary-list--noborder",
           rows: [
             {
               key: {
-                text: "Type"
+                text: "Tenure type"
               },
               value: {
-                text: "Secure"
+                text: "Leasehold (RTB)"
               }
             },
             {
               key: {
-                text: "Status"
+                text: "Tenure active"
               },
               value: {
-                text: "Active"
+                text: "Yes"
               }
             },
             {
               key: {
-                text: "Start date"
+                text: "Tenure start date"
               },
               value: {
                 text: "11/04/2004"
@@ -136,27 +155,20 @@
             },
             {
               key: {
-                text: "End date"
+                text: "Tenure end date"
               },
               value: {
                 text: "N/A"
               }
-            },
-            {
-              key: {
-                text: "Payment ref"
-              },
-              value: {
-                text: "xxxxxxxxxxxx"
-              }
             }
           ]
         }) }}
-        <!--form action="tenure" method="post">
-          <button class="lbh-button lbh-button--secondary">
-            View tenure
-          </button>
-        </form-->
+      </aside>
+
+      <aside class="lbh-aside">
+        <button class="lbh-button govuk-!-margin-bottom-5 action-disabled">
+          Edit person
+        </button>
       </aside>
 
     </div>

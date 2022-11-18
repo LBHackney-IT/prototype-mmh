@@ -26,6 +26,9 @@
       {% endif %}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        {% if data["cc-"+v+"-added"] %}
+          <img src="/public/images/bell.svg" alt="" class="icon-bell">
+        {% endif %}
         Tenure payment reference: 228008441
       </h1>
 
