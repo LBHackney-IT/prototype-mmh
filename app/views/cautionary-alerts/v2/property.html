@@ -21,7 +21,7 @@
         </section>
       {% endif %}
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+      <h1 class="lbh-heading lbh-heading-h1 govuk-!-margin-top-0 govuk-!-margin-bottom-3">
         {% if data["cc-"+v+"-added"] %}
           <img src="/public/images/bell.svg" alt="" class="icon-bell">
         {% endif %}
@@ -34,42 +34,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
 
-      <img src="/public/images/45-Oriel-Rd-Google-Maps.png" alt="Map" class="lbh-map-small">
-
-      <aside class="lbh-aside">
-        {% if data["cc-"+v+"-added"] %}
-          <h2 class="lbh-heading lbh-heading-h4">
-            <img src="/public/images/bell.svg" alt="" class="icon-bell icon-bell--small">
-            Cautionary alerts
-          </h2>
-          <!--
-          {{ govukSummaryList({
-            classes: "lbh-summary-list lbh-summary-list--noborder",
-            rows: [
-              {
-                key: {
-                  text: data["cc-"+v+"-tenant"]
-                },
-                value: {
-                  text: data["cc-"+v+"-type"]
-                }
-              }
-            ]
-          }) }}
-        -->
-          <p class="lbh-body" style="line-height: 1.3; margin-top: 15px;">
-            <a href="person"><strong>{{ data["cc-"+v+"-tenant"] }}</strong></a><br>
-            {{ data["cc-"+v+"-type"] }}
-          </p>
-        {% else %}
-          <h2 class="lbh-heading lbh-heading-h4">
-            Cautionary alerts
-          </h2>
-          <p class="lbh-body">
-            None
-          </p>
-        {% endif %}
-      </aside>
+      <!--img src="/public/images/45-Oriel-Rd-Google-Maps.png" alt="Map" class="lbh-map-small"-->
 
       <aside class="lbh-aside">
         {{ govukSummaryList({
@@ -104,7 +69,42 @@
       </aside>
 
       <aside class="lbh-aside">
-        <h2 class="lbh-heading lbh-heading-h4">
+        {% if data["cc-"+v+"-added"] %}
+          <h2 class="lbh-heading lbh-heading-h3">
+            <img src="/public/images/bell.svg" alt="" class="icon-bell icon-bell--small">
+            Cautionary alerts
+          </h2>
+          <!--
+          {{ govukSummaryList({
+            classes: "lbh-summary-list lbh-summary-list--noborder",
+            rows: [
+              {
+                key: {
+                  text: data["cc-"+v+"-tenant"]
+                },
+                value: {
+                  text: data["cc-"+v+"-type"]
+                }
+              }
+            ]
+          }) }}
+        -->
+          <p class="lbh-body" style="line-height: 1.3; margin-top: 15px;">
+            <a href="person"><strong>{{ data["cc-"+v+"-tenant"] }}</strong></a><br>
+            {{ data["cc-"+v+"-type"] }}
+          </p>
+        {% else %}
+          <h2 class="lbh-heading lbh-heading-h3">
+            Cautionary alerts
+          </h2>
+          <p class="lbh-body">
+            None
+          </p>
+        {% endif %}
+      </aside>
+
+      <aside class="lbh-aside">
+        <h2 class="lbh-heading lbh-heading-h3">
           <a href="tenure">Tenure</a>
         </h2>
         {{ govukSummaryList({
