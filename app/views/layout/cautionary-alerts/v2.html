@@ -75,7 +75,12 @@
         </li>
       </ul>
     </div>
-    <div class="mtfh-footer__section"></div>
+    <div class="mtfh-footer__section">
+      {{ govukTag({
+        classes: "govuk-tag--grey",
+        text: pageref
+      }) }}
+    </div>
   </footer>
 {% endblock %}
 
