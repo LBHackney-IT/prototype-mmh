@@ -16,8 +16,8 @@
         href: "cautionary-add"
       }) }}
 
-      <h1 class="lbh-heading-h1 govuk-!-margin-top-3 govuk-!-margin-bottom-3">
-        Check and confirm cautionary alert
+      <h1 class="lbh-heading lbh-heading-h1 govuk-!-margin-top-0 govuk-!-margin-bottom-3">
+        Check and confirm cautionary alert for Mrs Joan Fisher
       </h1>
 
       {{ govukSummaryList({
@@ -69,23 +69,6 @@
                   href: "cautionary-add",
                   text: "Change",
                   visuallyHiddenText: "type of caution"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Tenant"
-            },
-            value: {
-              text: data["cc-"+v+"-tenant"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "cautionary-add",
-                  text: "Change",
-                  visuallyHiddenText: "tenant"
                 }
               ]
             }

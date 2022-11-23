@@ -13,9 +13,9 @@
           href: "person"
         }) }}
 
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
-          Add cautionary alert
-        </h1>    
+        <h1 class="lbh-heading lbh-heading-h1 govuk-!-margin-top-0 govuk-!-margin-bottom-3">
+          Add cautionary alert for Mrs Joan Fisher
+        </h1>
     </div>
   </div>
   <div class="govuk-grid-row">
@@ -133,26 +133,7 @@
             ]
           }) }}
 
-          {{ govukSelect({
-            id: "cc-"+v+"-tenant",
-            name: "cc-"+v+"-tenant",
-            classes: "lbh-select",
-            label: {
-              text: "Tenant"
-            },
-            items: [
-              {
-                value: "",
-                text: "Select tenant",
-                selected: checked("cc-"+v+"-tenant", "")
-              },
-              {
-                value: "Joan Fisher",
-                text: "Joan Fisher",
-                selected: checked("cc-"+v+"-tenant", "Joan Fisher")
-              }
-            ]
-          }) }}
+          <input type="hidden" id="cc-{{v}}-tenant" name="cc-{{v}}-tenant" value="Joan Fisher">
 
           {{ govukTextarea({
             id: "cc-"+v+"-description",
