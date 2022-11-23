@@ -1,4 +1,5 @@
 {% set serviceName = "Manage My Home" %}
+{% set pageref = "CA-V2-002" %}
 {% extends "layout/cautionary-alerts/v2.html" %}
 
 {% block pageTitle %}
@@ -125,7 +126,7 @@
           {% if data["cc-"+v+"-added"] %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Cautionary alert
+              Cautionary alerts
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data["cc-"+v+"-type"] }}
