@@ -1,3 +1,5 @@
+const moment = require('moment')
+
 module.exports = function (env) {
   /**
    * Instantiate object used to store the methods registered as a
@@ -40,6 +42,24 @@ module.exports = function (env) {
 
   filters.is_string = function(obj) {
     return typeof obj == 'string';
+  }
+
+  filters.formatMonth = function(number){
+    if(number){
+      var date = moment().month(number -1)
+      return date.format('MMMM')
+    } else {
+      return ""
+    }
+  }
+
+  filters.formatShortMonth = function(number){
+    if(number){
+      var date = moment().month(number -1)
+      return date.format('MMM')
+    } else {
+      return ""
+    }
   }
   
   /* ------------------------------------------------------------------

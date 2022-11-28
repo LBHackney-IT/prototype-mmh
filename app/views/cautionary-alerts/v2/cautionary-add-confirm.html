@@ -44,7 +44,7 @@
               text: "Date of incident"
             },
             value: {
-              text: data["cc-"+v+"-date-day"]+" "+data["cc-"+v+"-date-month"]+" "+data["cc-"+v+"-date-year"]
+              text: data["cc-"+v+"-date-day"]+" "+data["cc-"+v+"-date-month"] | formatMonth +" "+data["cc-"+v+"-date-year"]
             },
             actions: {
               items: [
@@ -92,6 +92,7 @@
           }
         ]
       }) }}
+
       <form action="" method="post">
         <input type="hidden" name="cc-{{v}}-added" id="cc-{{v}}-added" value="true">
         <button class="govuk-button lbh-button" data-module="govuk-button">
